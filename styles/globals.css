@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -13,4 +17,74 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+body{
+  background:var(--background, #eee);
+  color:var(--text, #222);
+}
+
+a{
+  color:var(--links, #0b5cab);
+}
+ul.demos{
+  list-style:none;
+  margin:0;
+  padding:0;
+  columns: auto;
+  column-width:15em;
+  column-gap: 1em;
+}
+ul.demos > li{
+  break-inside: avoid;
+  margin-bottom:1em;
+}
+@supports (display:grid){
+  ul.demos{
+    columns: 1;
+    display:grid;
+    grid-template-rows: masonry;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    gap:1em
+  }
+  ul.demos > li{
+    margin-bottom:0;
+  }
+}
+ul.demos > li{
+  border:.1em solid currentcolor;
+  padding:1em;
+  background:var(--background2, #fff);
+}
+ul.demos img{
+  width:100%;
+  max-width:30em;
+  margin:0 auto;
+  display:block;
+}
+li:target {
+  grid-column: span 2;
+  box-shadow:0 0 1em  #000;
+  scroll-margin-top:1em;
+}
+@supports (display:grid){
+  @media (min-width:30em){
+    li:target img{
+      float: right;
+      width: 50%;
+    }
+  }
+}
+@media (max-width:30em){
+  li:target {
+    grid-column: auto;
+  }
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --text: #eee;
+    --background: #111;
+    --background2: #333;
+    --links:#009EDB;
+  }
 }
