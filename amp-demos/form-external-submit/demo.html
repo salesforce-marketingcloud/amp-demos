@@ -1,0 +1,89 @@
+<!-- {{={< >}=}} -->
+<!doctype html>
+<html amp4email data-css-strict lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+<style amp-custom>
+.wrapper {
+  max-width: 38.5em;
+  margin: 0 auto;
+  font-family: arial, sans-serif;
+  font-size: 1rem;
+  background:#fff;
+  color:#393939;
+}
+.title input, .review textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: .5em;
+  font: inherit;
+  margin: .5em 0;
+  color: #897f7f;
+  border: 1px solid #76767676;
+}
+textarea {
+  height: 300px;
+}
+.submit {
+  display: inline-block;
+  font: inherit;
+  color: #595959;
+  border: 1px solid #76767676;
+  background: none;
+  border-radius: .5em;
+  padding: .5em .9em;
+  margin: .5em 0;
+  text-decoration: none;
+}
+.submit:hover {
+  background: gray;
+  color: white;
+  cursor: pointer;
+}
+.amp-form-submit-success .faux {
+  display: none;
+}
+
+</style>
+</head>
+<body>
+
+<article class="wrapper" aria-label="placeholder aria label" lang="en">
+
+  <form action-xhr="https://pub.s4.exacttarget.com/sr0eggpcjlj" method="get" id="ic-form">
+
+    <div class="element rating">
+      <label><input type="radio" name="rating" value="5" on="input-debounced:ic-form.submit">5</label>
+      <label><input type="radio" name="rating" value="4" on="input-debounced:ic-form.submit">4</label>
+      <label><input type="radio" name="rating" value="3" on="input-debounced:ic-form.submit">3</label>
+      <label><input type="radio" name="rating" value="2" on="input-debounced:ic-form.submit">2</label>
+      <label><input type="radio" name="rating" value="1" on="input-debounced:ic-form.submit">1</label>
+    </div>
+
+    <div class="element title">
+      <input type="text" name="title" on="input-debounced:ic-form.submit">
+    </div>
+
+    <div class="element review">
+      <textarea name="review" on="input-debounced:ic-form.submit"></textarea>
+    </div>
+
+    <span class="submit faux">submit</span>
+
+    <div submit-success>
+      <template type="amp-mustache">
+        <a class="submit" href="{{url}}">submit</a>
+        <div><b>visual href value:</b><br>{{url}}</div>
+      </template>
+    </div>
+
+  </form>
+
+</article>
+
+</body>
+</html>

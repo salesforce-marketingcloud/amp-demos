@@ -1,0 +1,230 @@
+<!doctype html>
+<html ⚡4email data-css-strict>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+ .wrapper {
+      max-width: 38.5em;
+      margin: 0 auto;
+      font-family: arial, sans-serif;
+      font-size: 1rem;
+      background:#fff;
+      color:#393939;
+      text-align:center;
+    }
+    .header {
+      padding: 3em 1.25em 2em;
+      text-align:center;
+    }
+    .main {
+      padding: 1em;
+    }
+    .footer {
+      text-align: center;
+      padding: 1em 1em 3em;
+      font-size:.8em;
+    }
+    .footer p {
+      text-align: center;
+      margin: 1.1em 1.33em;
+    }
+    .footer a {
+      color:#393939;
+    }
+    .footer .link{
+      font-weight:bold;
+      color:#6DCCEE;
+    }
+    .footer .social{
+      width:14em;
+      margin:1.1em auto;
+      display:flex;
+      justify-content: space-between;
+    }
+    .footer .footer-nav{
+      padding:1em 1em 2em;
+    }
+    .footer .footer-nav a{
+      text-decoration:none;
+    }
+
+    .hero{
+      max-width:14em;
+      margin:0 auto;
+    }
+    .banner{
+      padding:1em;
+      background:#EDFAFD
+    }
+    h1{
+      font-size:1.5em;
+      text-align:center;
+      color:#097FB3;
+    }
+    .banner-text{
+      width:75%;
+      min-width:14em;
+      margin:1.5em auto;
+      text-align:center;
+      font-size:1.1em;
+    }
+   	hr{
+      border:none;
+      border-bottom:.1em solid #e5e5e5;
+    }
+
+
+
+
+    .ic-amp-label {
+      display: block;
+      text-align:left;
+      font-weight: bold;
+      padding: 0.8em 0 0.4em 0;
+
+    }
+
+    .ic-amp-input {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: .7em;
+      border: 0.02em solid #b6b6b6;
+      background: none;
+      -webkit-appearance: none;
+      font-size: inherit;
+    }
+    .select{
+      display:flex;
+      justify-content: space-around;
+    }
+    .select amp-img{
+    	display:block;;
+    }
+    .select [option]{
+      border:.1em solid #E5E5E5;
+      padding:.5em;
+
+    }
+    .select.select [option][selected]{
+      outline:none;
+      background:#097FB3;
+      color:#fff;
+
+    }
+
+    .submit-btn {
+      background: #097fb3;
+      color: #ffffff;
+      text-transform: uppercase;
+      border: none;
+      padding: 0.8em 3em;
+      margin-top:1em;
+      border-radius: 1.5em;
+      font-size: 1.1em;
+    }
+    form.amp-form-submitting .submit-btn,
+    form.amp-form-submit-success .form-content{
+      display:none;
+    }
+  </style>
+</head>
+<body>
+  <article class="wrapper" aria-label="" lang="en">
+    <div class="header">
+      <amp-img src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" height="3.8em" width="9.4em" alt="Northern Trail Outfitters"></amp-img>
+    </div>
+    <div class="main">
+      <h1>Lets us know more about yourself</h1>
+      <form method="post" action-xhr="https://pub.s4.exacttarget.com/qg4gk5zhhcs">
+
+        <div class="form-content">
+          <div>
+            <label class="ic-amp-label" for="name">Name:</label>
+            <input class="ic-amp-input" id="name" type="text" name="name" placeholder="Name..." required>
+          </div>
+          <div>
+            <label class="ic-amp-label" for="zip">Zip code:</label>
+            <input class="ic-amp-input" id="zip" type="text" name="zip" placeholder="Zip code..." required>
+          </div>
+
+
+          <label class="ic-amp-label" for="interests" >Interests:</label>
+          <amp-selector layout="container" id="interests" name="interests" multiple>
+            <div class="select">
+              <div option="camping">
+                Camping <amp-img src="https://www.northerntrailoutfitters.com/dw/image/v2/BDPX_PRD/on/demandware.static/-/Library-Sites-NTO-SFRASharedLibrary/default/dwe8fb19e0/images/category/gear-subcategory-camping-200-200.png" height="100" width="100"></amp-img>
+              </div>
+              <div option="cycling">
+                Cycling <amp-img src="https://www.northerntrailoutfitters.com/dw/image/v2/BDPX_PRD/on/demandware.static/-/Library-Sites-NTO-SFRASharedLibrary/default/dwead062f0/images/category/gear-subcategory-cycling-200-200.png" height="100" width="100"></amp-img>
+              </div>
+              <div option="hiking">
+                Hiking <amp-img src="https://www.northerntrailoutfitters.com/dw/image/v2/BDPX_PRD/on/demandware.static/-/Library-Sites-NTO-SFRASharedLibrary/default/dw70ab4ead/images/category/gear-subcategory-bags-200-200.png" height="100" width="100"></amp-img>
+              </div>
+            </div>
+          </amp-selector>
+
+	        <input type="submit" value="Submit" class="submit-btn">
+        </div>
+        <div submitting>
+        	<amp-anim src="https://thumbs.gfycat.com/RelievedSilentArcticwolf-small.gif" height="50" width="50" alt=""></amp-anim>
+        </div>
+
+
+        <div submit-success>
+          <template type="amp-mustache">
+            <h2>Success!</h2>
+            Thanks {{name}} for updating your preferences.
+          </template>
+        </div>
+        <div submit-error>
+          <template type="amp-mustache">
+            Error! Thanks {{name}} but there appears to have been an error.
+          </template>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="footer">
+      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-logo-secondary-footer.png" height="3.25em" width="3.25em" alt=""></amp-img>
+      <p> To view this email as a web page, click
+          <!--
+          <a class="link" href="%%view_email_url%%">here.</a>
+          --><a class="link">here.</a>
+      </p>
+      <p>
+                  <span style="font-weight:bold;">%%Member_Busname%%</span>
+                  <br>
+                  <br>%%Member_Addr%%
+                  <br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%
+                  <br>
+      </p>
+      <div class="social">
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+      </div>
+      <div class="footer-nav">
+        <a href="https://northerntrailoutfitters.com/default/contact.html">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://northerntrailoutfitters.com/default/stores?showMap=true&amp;horizontalView=true">Store Locator</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://northerntrailoutfitters.com/default/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <!--
+        <a href="%%profile_center_url%%">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="%%unsub_center_url%%">Unsubscribe</a>
+        -->
+        <a >Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a >Unsubscribe</a>
+      </div>
+    </div>
+  </article>
+</body>
+</html>

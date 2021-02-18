@@ -1,0 +1,333 @@
+<!--
+{{={< >}=}}
+-->
+<!doctype html>
+<html amp4email data-css-strict lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+	<script async custom-element="amp-timeago" src="https://cdn.ampproject.org/v0/amp-timeago-0.1.js"></script>
+
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden
+      }
+    </style>
+    <style amp-custom>
+      .wrapper {
+        max-width: 38.5em;
+        margin: 0 auto;
+        font-family: arial, sans-serif;
+        font-size: 1rem;
+        background:#fff;
+        color:#393939;
+      }
+      .header {
+        padding: 3em 1.25em 2em;
+        text-align:center;
+      }
+      .main {
+        padding: 1em;
+      }
+      .footer {
+        text-align: center;
+        padding: 1em 1em 3em;
+        font-size:.8em;
+      }
+      .footer p {
+        text-align: center;
+        margin: 1.1em 1.33em;
+      }
+      .footer a {
+        color:#393939;
+      }
+      .footer .link{
+        font-weight:bold;
+        color:#6DCCEE;
+      }
+      .footer .social{
+        width:14em;
+        margin:1.1em auto;
+        display:flex;
+        justify-content: space-between;
+      }
+      .footer .footer-nav{
+        padding:1em 1em 2em;
+      }
+      .footer .footer-nav a{
+        text-decoration:none;
+      }
+
+      .hero{
+        max-width:14em;
+        margin:0 auto;
+      }
+      h1{
+        font-size:1.5em;
+        text-align:center;
+        color:#097FB3;
+      }
+      .banner-text{
+        width:75%;
+        min-width:14em;
+        margin:1.5em auto;
+        text-align:center;
+        font-size:1.1em;
+      }
+      .banner-text a,
+      .order-details a{
+        color:#097FB3;
+        font-weight:bold;
+      }
+      hr{
+        border:none;
+        border-bottom:.1em solid #e5e5e5;
+      }
+
+
+      amp-list{
+        text-align:center
+      }
+
+      .progress{
+        border:.1em solid currentcolor;
+        padding:.1em;
+        border-radius:2em;
+      }
+      .progress > div{
+        border-radius:2em;
+        box-shadow:inset 0 .2em .9em rgba(0,0,0,.5), inset 0 -.2em .6em rgba(255,255,255,.9);
+        overflow:hidden;
+        width:100%;
+        background-color:#e5e6e6;
+        background-image:
+          linear-gradient(
+            90deg,
+            transparent 24.5%,
+            #fff 24.5%,
+            #999 25.5%,
+            transparent 25.5%,
+            transparent 49.5%,
+            #fff 49.5%,
+            #999 50.5%,
+            transparent 50.5%,
+            transparent 74.5%,
+            #fff 74.5%,
+            #999 75.5%,
+            transparent 75.5%),
+          linear-gradient(
+            -45deg,
+            #e5e6e699 25%,
+            #6dccee99 25%,
+            #6dccee99 50%,
+            #e5e6e699 50%,
+            #e5e6e699 75%,
+            #6dccee99 75%,
+            #6dccee99);
+        background-size:auto, 2em;
+      }
+      .progress div div{
+        box-shadow:inset 0 .2em .9em rgba(255,255,255,.5), inset 0 -.2em .6em rgba(0,0,0,.5);
+        background:#097FB3;
+        color:#fff;
+        text-align:right;
+        padding:.5em;
+        box-sizing:border-box;
+      }
+      .progress-processing {width:25%}
+      .progress-packed {width:50%}
+      .progress-shipped {width:75%}
+      .progress-delivered  {width:100%}
+
+      amp-list h2{
+        text-transform: capitalize;
+      }
+      .order-details p{
+      	font-size:1.25em;
+      }
+      .timeago{display:inline}
+
+
+      .product-list{
+        display:flex;
+        flex-wrap:wrap;
+      }
+      .product{
+        width:25%;
+        text-align:center;
+        padding: 1em 0;
+        box-sizing: border-box;
+      }
+      .product h3{
+        font-size:1em;
+      }
+      .product .cta{
+        color: #097fb3;
+        border: .1em solid #097fb3;
+        text-decoration:none;
+        padding:.5em 1em;
+      }
+      .product .cta:hover{
+        color: #fff;
+        background:#097fb3;
+      }
+
+      .a11yhidden{
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+      .see-more{display:none}
+      @media screen and (max-width: 30em){
+      	.product{
+        	width:50%;
+        }
+        #list{
+          height:auto;
+        }
+        .see-more[overflow] {
+          display:block;
+          background:#fff;
+          z-index:10;
+          box-shadow:0 -.5em 1em #fff;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+        .see-more button{
+          color: #fff;
+          font-size:1em;
+          background:#097fb3;
+          border: .1em solid #097fb3;
+          text-decoration:none;
+          padding:.5em 1em;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <article class="wrapper" aria-label="NTO, Book new bike set up appointment" lang="en">
+      <div class="header">
+        <amp-img src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" height="3.8em" width="9.4em" alt="Northern Trail Outfitters"></amp-img>
+      </div>
+      <div class="main">
+        <amp-img src="https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw27249499/images/large/5112990AAE-1.jpg" height="22em" width="22em" layout="responsive" class="hero"></amp-img>
+        <h1>Thanks for your purchase!</h1>
+        <p class="banner-text">Thank you for your order of a <b>Cannondale Foray 1 27.5" Women's Bike.</b></p>
+        <p class="banner-text">Order Number: <a href="https://www.northerntrailoutfitters.com">NTO179852</a></p>
+
+        <hr>
+
+        <amp-list width="100" height="120" id="list"
+                  layout="responsive"
+                  src="https://pub.s4.exacttarget.com/t2eejql1acf?nto=179852" binding="always">
+          <template type="amp-mustache">
+            <h2>Order Status: {{order.shippingStatus}}</h2>
+
+            <div class="progress">
+              <div><div class="progress-{{order.shippingStatus}}" [text]="'{{order.shippingStatus}}'"></div></div>
+            </div>
+
+            <div class="order-details" hidden [hidden]="'{{order.shippingStatus}}' != 'processing'">
+              <p>Your order is currently being processed by our team.</p>
+              <p>You can still add items to your order while it's procesing and they will be included in the delivery.</p>
+            </div>
+            <div class="order-details" hidden [hidden]="'{{order.shippingStatus}}' != 'packed'">
+              <p>Your order has been packed and ready to be picked up by our courier.</p>
+            </div>
+            <div class="order-details" hidden [hidden]="'{{order.shippingStatus}}' != 'shipped'">
+              <p>Your order is with our courier <b>{{order.courierTracking.name}}</b> and is due for delivery on <b>{{order.courierTracking.estimatedArivalText}}</b>.</p>
+              <p>Tracking number: <a href="{{order.courierTracking.link}}">{{order.courierTracking.number}}</a>
+              <p>Delivery due
+                <amp-timeago class="timeago" layout="fixed-height"height="1em" width="auto" datetime="{{order.courierTracking.estimatedArivalCode}}" locale="en">
+                  {{order.courierTracking.estimatedArivalText}}
+				</amp-timeago>
+              </p>
+            </div>
+            <div class="order-details" hidden [hidden]="'{{order.shippingStatus}}' != 'delivered'">
+              <p>Your order has been delivered.  We really hope you enjoy your new <b>Cannondale Foray 1 27.5" Women's Bike.</b></p>
+            </div>
+
+			<hr>
+
+            <div class="product-list">
+              <h2>Keep your new bike safe with a bike lock.</h2>
+
+
+             {{#order.products}}
+              <div class="product">
+                <amp-carousel width="10em" height="10em" layout="responsive" type="slides" role="region" aria-label="{{title}} gallery">
+                  {{#imgs}}
+                  <amp-img src="{{.}}" width="10em" height="10em" layout="responsive"></amp-img>
+                  {{/imgs}}
+                </amp-carousel>
+                <h3>{{name}}</h3>
+                <p>{{price}}</p>
+                <a href="{{href}}" class="cta">Shop <span class="a11yhidden">{{name}} </span>Now</a>
+              </div>
+             {{/order.products}}
+            </div>
+            <div overflow class="see-more" [hidden]="hide">
+            	<button on="tap:list.changeToLayoutContainer(),AMP.setState({ hide: true })">see more</button>
+            </div>
+
+          </template>
+
+          <div placeholder>
+            <strong>Loading the latsest on your order...</strong><br><br>
+            <amp-anim src="https://thumbs.gfycat.com/RelievedSilentArcticwolf-small.gif" height="50" width="50" alt=""></amp-anim>
+          </div>
+          <div fallback>
+            <p>There was an error loading the apointments.
+              <br><br>
+              Please try again later or call us on 1-(800)-555-0199</p>
+          </div>
+        </amp-list>
+      </div>
+
+      <div class="footer">
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-logo-secondary-footer.png" height="3.25em" width="3.25em" alt=""></amp-img>
+        <p> To view this email as a web page, click
+          <!--
+          <a class="link" href="%%view_email_url%%">here.</a>
+          --><a class="link">here.</a>
+        </p>
+        <p>
+          <span style="font-weight:bold;">%%Member_Busname%%</span>
+          <br>
+          <br>%%Member_Addr%%
+          <br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%
+          <br>
+        </p>
+        <div class="social">
+          <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
+          <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
+          <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
+          <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
+          <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+        </div>
+        <div class="footer-nav">
+          <a href="https://northerntrailoutfitters.com/default/contact.html">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="https://northerntrailoutfitters.com/default/stores?showMap=true&amp;horizontalView=true">Store Locator</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="https://northerntrailoutfitters.com/default/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+          <!--
+        <a href="%%profile_center_url%%">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="%%unsub_center_url%%">Unsubscribe</a>
+        -->
+          <a >Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+          <a >Unsubscribe</a>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

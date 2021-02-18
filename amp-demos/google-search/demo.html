@@ -1,0 +1,91 @@
+<!-- {{={< >}=}} -->
+<!doctype html>
+<html amp4email data-css-strict lang="en">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    body{
+      text-align:center;
+    }
+    amp-img{
+      margin:2em 1em 1em;
+    }
+	input{
+      padding: 0 1em;
+      color: rgba(0,0,0,.87);
+      word-wrap: break-word;
+      outline: none;
+      flex: 100%;
+      margin-top: -37px;
+      font-size: 16px;
+      background: #fff;
+      display: flex;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      height: 44px;
+      margin: 0 auto;
+      max-width: 482px;
+      width:80%;
+    }
+    .submit{
+      display:inline-block;
+      text-decoration:none;
+      background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+      background-color: #f2f2f2;
+      border: 1px solid #f2f2f2;
+      border-radius: 4px;
+      color: #5F6368;
+      font-family: arial,sans-serif;
+      font-size: 14px;
+      margin: 2em 4px;
+      padding: 0 16px;
+      line-height:36px;
+      height: 36px;
+      min-width: 54px;
+      text-align: center;
+    }
+
+    .user-valid .submit.faux,
+    .user-invalid .submit.faux{display:none;}
+    span.submit:hover{opacity:0}
+
+
+  </style>
+</head>
+<body>
+<form method="post" id="myform"
+  action-xhr="https://pub.s4.exacttarget.com/de2gcvht4pa?url=https%3A%2F%2Fwww.google.com%2Fsearch">
+	<!-- Landing page URL is passed in the action-xhr -->
+
+  <amp-img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" width="213" height="72"></amp-img>
+  <div>
+    <input type="text"
+      placeholder="Search Query"
+      required
+      name="q"
+      on="input-debounced:myform.submit">
+  </div>
+  <a class="submit faux" href="https://www.google.com">Google Search</a>
+  <div submit-success>
+    <template type="amp-mustache">
+      <a class="submit" href="{{get}}">Google Search</a>
+      <p><small>{{get}}</small></p>
+    </template>
+  </div>
+  <div submitting>
+      <span class="submit">Google Search</span>
+  </div>
+  <div submit-error>
+    <template type="amp-mustache">
+      Error!
+    </template>
+  </div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!-- {{={< >}=}} -->
+<!doctype html>
+<html amp4email data-css-strict lang="en">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden
+    }
+  </style>
+  <style amp-custom>
+    .wrapper {
+      max-width: 38.5em;
+      margin: 0 auto;
+      font-family: arial, sans-serif;
+      font-size: 1rem;
+      background:#fff;
+      color:#393939;
+      text-align:center;
+    }
+    .header {
+      padding: 3em 1.25em 2em;
+      text-align:center;
+    }
+    .main {
+      padding: 1em;
+    }
+    .footer {
+      text-align: center;
+      padding: 1em 1em 3em;
+      font-size:.8em;
+    }
+    .footer p {
+      text-align: center;
+      margin: 1.1em 1.33em;
+    }
+    .footer a {
+      color:#393939;
+    }
+    .footer .link{
+      font-weight:bold;
+      color:#6DCCEE;
+    }
+    .footer .social{
+      width:14em;
+      margin:1.1em auto;
+      display:flex;
+      justify-content: space-between;
+    }
+    .footer .footer-nav{
+      padding:1em 1em 2em;
+    }
+    .footer .footer-nav a{
+      text-decoration:none;
+    }
+
+    .hero{
+      max-width:14em;
+      margin:0 auto;
+    }
+    .banner{
+      padding:1em;
+      background:#EDFAFD
+    }
+    h1{
+      font-size:1.5em;
+      text-align:center;
+      color:#097FB3;
+    }
+    .banner-text{
+      width:75%;
+      min-width:14em;
+      margin:1.5em auto;
+      text-align:center;
+      font-size:1.1em;
+    }
+   	hr{
+      border:none;
+      border-bottom:.1em solid #e5e5e5;
+    }
+
+    amp-carousel .slide{
+      display:grid;
+      transition: transform 0.2s
+    }
+    amp-carousel .slide:hover{
+      transform: scale(1.1);
+    }
+    amp-carousel .slide *{
+      grid-column: 1;
+      grid-row: 1;
+    }
+    amp-carousel h2{
+      text-transform:uppercase;
+      margin: auto;
+	  width:7em;
+	  height:7em;
+      background:rgba(22, 22, 22, 0.4);
+      border-radius:50%;
+      color:#fff;
+      z-index:1;
+    }
+    amp-carousel h2 span{
+      display:inline-block;
+      margin-top:50%;
+      transform:translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+  <article class="wrapper" aria-label="NTO, simple carousel AMP demo" lang="en">
+    <div class="header">
+      <amp-img src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" height="3.8em" width="9.4em" alt="Northern Trail Outfitters"></amp-img>
+    </div>
+    <div class="main">
+      <amp-carousel width="700" height="450" layout="responsive" type="slides" autoplay loop>
+        <a href="https://ntoretail.com/shop/mens" class="slide">
+          <h2><span>Mens</span></h2>
+          <amp-img src="https://s3.amazonaws.com/nto/images/home-mens.png" width="450" height="300" layout="responsive" alt=""></amp-img>
+        </a>
+        <a href="https://ntoretail.com/shop/womens" class="slide">
+          <h2><span>Womens</span></h2>
+          <amp-img src="https://s3.amazonaws.com/nto/images/home-womens.png" width="450" height="300" layout="responsive" alt=""></amp-img>
+        </a>
+        <a href="https://ntoretail.com/shop/kids" class="slide">
+          <h2><span>Kids</span></h2>
+          <amp-img src="https://s3.amazonaws.com/nto/images/home-kids.png" width="450" height="300" layout="responsive" alt=""></amp-img>
+        </a>
+        <a href="https://ntoretail.com/shop/gear" class="slide">
+          <h2><span>Gear</span></h2>
+          <amp-img src="https://s3.amazonaws.com/nto/images/home-gear.png" width="450" height="300" layout="responsive" alt=""></amp-img>
+        </a>
+        <a href="https://ntoretail.com/shop/electronics" class="slide">
+          <h2><span>Electronics</span></h2>
+          <amp-img src="https://s3.amazonaws.com/nto/images/home-electronics.png" width="450" height="300" layout="responsive" alt=""></amp-img>
+        </a>
+        <a href="https://ntoretail.com/shop/energy-and-nutrition" class="slide">
+          <h2><span>Energy & Nutrition</span></h2>
+          <amp-img src="https://s3.amazonaws.com/nto/images/home-energy-and-nutrition.png" width="450" height="300" layout="responsive" alt=""></amp-img>
+        </a>
+      </amp-carousel>
+    </div>
+
+
+    <div class="footer">
+      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-logo-secondary-footer.png" height="3.25em" width="3.25em" alt=""></amp-img>
+      <p> To view this email as a web page, click
+          <!--
+          <a class="link" href="%%view_email_url%%">here.</a>
+          --><a class="link">here.</a>
+      </p>
+      <p>
+                  <span style="font-weight:bold;">%%Member_Busname%%</span>
+                  <br>
+                  <br>%%Member_Addr%%
+                  <br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%
+                  <br>
+      </p>
+      <div class="social">
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+      </div>
+      <div class="footer-nav">
+        <a href="https://northerntrailoutfitters.com/default/contact.html">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://northerntrailoutfitters.com/default/stores?showMap=true&amp;horizontalView=true">Store Locator</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://northerntrailoutfitters.com/default/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <!--
+        <a href="%%profile_center_url%%">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="%%unsub_center_url%%">Unsubscribe</a>
+        -->
+        <a >Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a >Unsubscribe</a>
+      </div>
+    </div>
+  </article>
+</body>
+</html>

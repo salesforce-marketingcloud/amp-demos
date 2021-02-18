@@ -5,7 +5,6 @@
 <meta charset="utf-8">
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
 <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 <style amp4email-boilerplate>body{visibility:hidden}</style>
@@ -64,7 +63,6 @@ h2, p {
   margin: 0;
 }
 input[type="radio"] {
-  display:inline-block;
   opacity:0;
   width:0;
   height:0;
@@ -321,6 +319,7 @@ legend, .ic-amp-legend {
 </head>
 <body>
 
+<!-- this may no longer be necessary -->
 <amp-state id="state">
   <script type="application/json">
     {
@@ -339,7 +338,7 @@ legend, .ic-amp-legend {
 
 <div class="ic-amp-header">
   <amp-img layout="responsive" src="https://image.s4.sfmc-content.com/lib/fe9815747266017d71/m/1/d97c4aa9-93e8-41ee-b018-d410625ed680.png" width="66" height="123" alt=""></amp-img>
-  <h2>AAAAAAAAAH</h2>
+  <h2>Buy online, pick up today!</h2>
   <p>Find a NTO store near you and get the gear you need for your next adventure.</p>
 </div>
 
@@ -357,19 +356,19 @@ legend, .ic-amp-legend {
       <legend>Radius</legend>
         <div class="ic-amp-options ic-amp-options-radius">
           <label>
-            <input type="radio" name="radius" value="5" on="AMP.setState({state:{ myRadiusText: '5 mile'}})">
+            <input type="radio" name="radius" value="5" on="change:AMP.setState({state:{ myRadiusText: '5 mile'}})">
             <div>05 miles</div>
           </label>
           <label>
-            <input type="radio" name="radius" value="15" on="AMP.setState({state:{ myRadiusText: '15 mile'}})">
+            <input type="radio" name="radius" value="15" on="change:AMP.setState({state:{ myRadiusText: '15 mile'}})">
             <div>15 miles</div>
           </label>
           <label>
-            <input type="radio" name="radius" value="30" on="AMP.setState({state:{ myRadiusText: '30 mile'}})">
+            <input type="radio" name="radius" value="30" on="change:AMP.setState({state:{ myRadiusText: '30 mile'}})">
             <div>30 miles</div>
           </label>
           <label>
-            <input type="radio" name="radius" value="50" on="AMP.setState({state:{ myRadiusText: '50 mile'}})">
+            <input checked type="radio" name="radius" value="50" on="change:AMP.setState({state:{ myRadiusText: '50 mile'}})">
             <div>50 miles</div>
           </label>
         </div>
@@ -379,23 +378,23 @@ legend, .ic-amp-legend {
       <legend>Limit Results</legend>
         <div class="ic-amp-options ic-amp-options-limit">
           <label>
-            <input type="radio" name="limit" value="5" on="AMP.setState({state:{ myLimitText: '5 locations'}})">
+            <input type="radio" name="limit" value="5" on="change:AMP.setState({state:{ myLimitText: '5 locations'}})">
             <div>05</div>
           </label>
           <label>
-            <input type="radio" name="limit" value="10" on="AMP.setState({state:{ myLimitText: '10 locations'}})">
+            <input type="radio" name="limit" value="10" on="change:AMP.setState({state:{ myLimitText: '10 locations'}})">
             <div>10</div>
           </label>
           <label>
-            <input type="radio" name="limit" value="20" on="AMP.setState({state:{ myLimitText: '20 locations'}})">
+            <input type="radio" name="limit" value="20" on="change:AMP.setState({state:{ myLimitText: '20 locations'}})">
             <div>20</div>
           </label>
           <label>
-            <input type="radio" name="limit" value="50" on="AMP.setState({state:{ myLimitText: '50 locations'}})">
+            <input type="radio" name="limit" value="50" on="change:AMP.setState({state:{ myLimitText: '50 locations'}})">
             <div>50</div>
           </label>
           <label>
-            <input type="radio" name="limit" value="300" on="AMP.setState({state:{ myLimitText: 'all locations'}})">
+            <input checked type="radio" name="limit" value="300" on="change:AMP.setState({state:{ myLimitText: 'all locations'}})">
             <div>Show All</div>
           </label>
         </div>

@@ -1,0 +1,6 @@
+{
+    "title": "Abandoned Cart",
+    "description": "Content is populated on open. It can change based on day of the week, weather, inventory, price, and availability. The carousel also dynamically displays products based on the recipients weather forecast.",
+    "componentsUsed": ["amp-list", "amp-mustache", "amp-carousel", "SSJS"],
+    "thumbnailUrl": "../img/abandon-cart.png"
+}

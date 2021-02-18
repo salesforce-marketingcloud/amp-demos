@@ -1,0 +1,6 @@
+{
+    "title": "Simple carousel",
+    "description": " This is a very simple example showing how to use the amp-carousel component.",
+    "componentsUsed": ["amp-carousel"],
+    "thumbnailUrl": "../img/carousel.gif"
+}

@@ -1,0 +1,134 @@
+<!--
+{{ ={< >}= }}
+-->
+<!doctype html>
+<html ⚡4email data-css-strict>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    body {
+      font-family: monospace;
+      font-size: 1.15em;
+      text-align: center;
+    }
+    h2 {
+      margin: .5em 0;
+      font-size: 2.5em;
+    }
+    input {
+      display:none;
+    }
+    label {
+      display: inline-block;
+      box-sizing: border-box;
+      /* width: 100%; */
+      /* max-width: 175px; */
+      margin: 11px;
+      padding: 11px 44px;
+      font-size: 1.6em;
+      background: #ebebeb;
+      border: 2px solid black;
+      border-radius: 11px;
+      box-shadow: 6px 6px 10px -4px #000;
+    }
+    form + form{
+      display:none;
+    }
+    form.complete + form{
+   	  display:block
+    }
+    form.complete.complete{
+      display:none;
+    }
+    .in-email-completion {
+      display:none;
+    }
+    form.complete + .in-email-completion {
+      display:block;
+      padding:33px;
+    }
+    .prod-img {
+      display:inline-block;
+      width:100%;
+      max-width:400px;
+    }
+    .prod-img div{
+      padding-bottom:100%;
+      background-size:contain;
+      background-repeat:no-repeat;
+    }
+    .in-email-review {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .in-email-review div {
+      font-size: 1.4em;
+      padding: 1em 0.5em;
+      border: 1px solid black;
+      /* border-radius: 40px; */
+      /* box-shadow: 6px 6px 12px -5px #000; */
+    }
+    .in-email-completion .like { border-color: #408843; background: #6d9c6d3d;}
+    .in-email-completion .dislike { border-color: #540505; background: #e2646454;}
+    .no-matches-fallback { }
+  </style>
+</head>
+<body>
+
+<amp-list id="reivewList" noloading width="auto" height="400" layout="fixed-height" src="https://pub.s4.exacttarget.com/f3mv00u33nh">
+<!-- <amp-list id="reivewList" noloading width="auto" height="400" layout="fixed-height" src="simple-review.json"> -->
+  <template type="amp-mustache">
+
+{{#prod_items}}
+    <form id="product-{{id}}" method="post" [class]="myClass{{id}}"
+    action-xhr="https://example.com">
+
+    <div class="prod-img">
+      <div style="background-image:url({{img}})"></div>
+    </div>
+
+      <h2 class="prod-name">Do you like {{name}}?</h2>
+        <label>Yes
+          <input type="radio" name="product-{{id}}" value="LIKE_VALUE"
+            on="change:
+            product-{{id}}.submit,
+            AMP.setState({ myClass{{id}}: 'complete', myChoice{{id}}: 'like' })">
+        </label>
+        <label>No
+          <input type="radio" name="product-{{id}}" value="DISLIKE_VALUE"
+            on="change:
+            product-{{id}}.submit,
+            AMP.setState({ myClass{{id}}: 'complete', myChoice{{id}}: 'dislike' })">
+        </label>
+    </form>
+{{/prod_items}}
+
+{{^prod_items}}
+  <div class="no-matches-fallback">
+    <h2>Reviews were recorded after this email was sent!</h2>
+    <p>Maybe load results here instead</p>
+  </div>
+{{/prod_items}}
+
+  <div class="in-email-completion">
+    <h2>Thank you for your feedback!</h2>
+    <div class="in-email-review">
+    {{#prod_items}}
+      <div [class]="myChoice{{id}}">{{name}}</div>
+    {{/prod_items}}
+    </div>
+  </div>
+
+  </template>
+</amp-list>
+
+</body>
+</html>

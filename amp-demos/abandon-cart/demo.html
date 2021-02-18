@@ -1,0 +1,246 @@
+<!-- {{={< >}=}} -->
+<!doctype html>
+<html ⚡4email data-css-strict lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+<style amp-custom>
+h2, p {
+  margin:0
+}
+.wrapper {
+  max-width: 38.5em;
+  margin: 0 auto;
+  font-family: verdana, arial, sans-serif;
+  font-size: 1rem;
+  background:#fff;
+  color:#393939;
+  text-align: center;
+  padding: 0 1rem;
+}
+.footer {
+  text-align: center;
+  /* padding: 5em 1em 3em; */
+  padding: 2em 1em 3em;
+  font-size:.8em;
+}
+.footer p {
+  text-align: center;
+  margin: 1.1em 1.33em;
+}
+.footer a {
+  color:#393939;
+}
+.footer .link{
+  font-weight:bold;
+  color:#6DCCEE;
+}
+.footer .social{
+  width:14em;
+  margin:1.1em auto;
+  display:flex;
+  justify-content: space-between;
+}
+hr {
+  border: none;
+}
+.footer .footer-nav{
+  padding:1em 1em 2em;
+}
+.footer .footer-nav a{
+  text-decoration:none;
+}
+.cart-wrapper {
+  min-height:800px;
+  background: url(https://image.s4.sfmc-content.com/lib/fe9815747266017d71/m/1/e9c21521-e62d-49f4-85f1-abeb7a98c88b.png);
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 50%;
+}
+.cart-product-preheader {
+  font-size: 1em;
+  font-weight: normal;
+  padding: 1em 0 0 0;
+}
+.cart-product-logo {
+  max-width:250px;
+  margin:2em auto;
+}
+.cart-product-name {
+  font-size: 2em;
+}
+.cart-product-short-description {
+  font-size: 1.2em;
+}
+.cart-product-long-description {
+  margin: 0 0 1.5em 0;
+  font-size: 1.1em;
+}
+.cart-product-image {
+  max-width:400px;
+  margin:2em auto;
+}
+.cart-product-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #097fb3;
+  text-align: center;
+  border-radius: 2em;
+  padding: 1em 2em;
+}
+.weather-wrapper {
+  min-height: 350px;
+}
+.weather-related {
+  padding: 1em 0;
+  background: url(https://image.s4.sfmc-content.com/lib/fe9815747266017d71/m/1/e9c21521-e62d-49f4-85f1-abeb7a98c88b.png);
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 50%;
+}
+.weather-related-title {
+  padding: .5em;
+  font-size: 1.4em;
+}
+.weather-related-products-wrapper {
+/*
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.2em;
+  margin: 1em 0;
+*/
+}
+.weather-related-products {
+  width:300px;
+}
+.weather-related-button {
+  font-size: .9em;
+  color: #097fb3;
+  padding: 0.7em;
+  background: #ffffffdb;
+}
+
+@media screen and (max-width: 35em){
+  .cart-wrapper {
+      min-height: 740px;
+  }
+  .cart-product-preheader {
+      font-size: 0.7em;
+  }
+  .cart-product-name {
+      font-size: 1.4em;
+  }
+  .cart-product-short-description {
+      font-size: 0.9em;
+  }
+  .cart-product-long-description {
+      font-size: 0.8em;
+  }
+  .cart-product-button {
+      font-size: 1em;
+  }
+  .weather-wrapper {
+      min-height:280px;
+  }
+  .weather-related-title {
+      font-size: 1.1em;
+  }
+  .weather-related-button {
+      font-size: .6em;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<article class="wrapper" aria-label="NTO, All the things we leave behind" lang="en">
+
+<amp-list class="cart-wrapper" width="600" height="800" layout="responsive" src="https://pub.s4.exacttarget.com/sh5b23xwxln">
+  <template type="amp-mustache">
+
+    {{#products}}
+      <div class="cart-product">
+        <h2 class="cart-product-preheader">{{dailyMsg}}</h2>
+
+        <amp-img class="cart-product-logo" layout="responsive" src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" width="348" height="142" alt="Northern Trail Outfitters"></amp-img>
+
+        <h2 class="cart-product-name">{{name}}</h2>
+          <p class="cart-product-short-description">{{shortDescription}}</p>
+
+          <amp-img src="{{image}}" width="700" height="450" alt="" layout="responsive" class="cart-product-image"></amp-img>
+
+          <div class="cart-product-long-description">{{longDescription}}</div>
+
+          <a href="{{url}}" class="cart-product-button">
+            {{#inventory}}
+              {{#free_ship_incentive}}Order today for free shipping{{/free_ship_incentive}}
+              {{^free_ship_incentive}}Only {{items_in_stock}} left in stock, finish your order now!{{/free_ship_incentive}}
+            {{/inventory}}
+          </a>
+
+      </div>
+    {{/products}}
+
+  </template>
+</amp-list>
+
+<hr>
+
+<amp-list class="weather-wrapper" width="600" height="400" layout="responsive" src="https://pub.s4.exacttarget.com/n3pwhdhffna?zip=10036">
+  <template type="amp-mustache">
+    <div class="weather-related">
+      <h2 class="weather-related-title">{{condProdMsg}}</h2>
+      <div class="weather-related-products-wrapper">
+        <amp-carousel height="400" layout="fixed-height" type="slides">
+        {{#condObj}}
+          <div class="weather-related-products">
+            <a href="{{url}}"><amp-img src="{{img}}" width="100" height="100" alt="" layout="responsive" class="weather-related-img"></amp-img></a>
+            <a class="weather-related-button" href="{{url}}">{{name}}</a>
+          </div>
+        {{/condObj}}
+      </amp-carousel>
+      </div>
+    </div>
+  </template>
+</amp-list>
+
+<hr>
+
+<div class="footer">
+  <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-logo-secondary-footer.png" height="3.25em" width="3.25em" alt=""></amp-img>
+
+  <p> To view this email as a web page, click <!-- <a class="link" href="%%view_email_url%%">here.</a> --><a class="link">here.</a></p>
+  <p><span style="font-weight:bold;">%%Member_Busname%%</span><br><br>%%Member_Addr%%<br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%<br></p>
+
+  <div class="social">
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+  </div>
+
+  <div class="footer-nav">
+    <a href="https://northerntrailoutfitters.com/default/contact.html">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://northerntrailoutfitters.com/default/stores?showMap=true&amp;horizontalView=true">Store Locator</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://northerntrailoutfitters.com/default/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <!-- <a href="%%profile_center_url%%">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
+    <!-- <a href="%%unsub_center_url%%">Unsubscribe</a> -->
+    <a>Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a>Unsubscribe</a>
+  </div>
+
+</div>
+
+</article>
+
+
+</body>
+</html>

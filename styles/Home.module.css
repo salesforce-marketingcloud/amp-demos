@@ -114,6 +114,13 @@
   height: 1em;
 }
 
+.components li {
+  background: #414141;
+  display: inline-block;
+  margin: 0 .2em;
+  padding: 0 0.4em;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
