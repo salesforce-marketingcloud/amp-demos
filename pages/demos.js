@@ -38,7 +38,7 @@ export default function Demos() {
 
               <ul>
                 <li>
-                  <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`}>AMP playground</a>
+                  <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`} target="_blank">AMP playground</a>
                 </li>
 {/* Add in additionalFiles, I'm not sure how to do each */}
                 <li><a href={`#${title}`}>Link to this demo</a></li>
