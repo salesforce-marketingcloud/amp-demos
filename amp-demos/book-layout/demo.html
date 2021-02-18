@@ -21,7 +21,7 @@
       margin:0 auto;
       width:80%;
     }
-    .controls-bottom,
+    .controls-bottom, 
     .controls-back{
       display:flex;
       flex-wrap:wrap;
@@ -91,9 +91,9 @@
       transform:rotateY(-1deg)translateZ(.1em);
     }
     .page:not(.open){
-      transform:rotateY(-179deg)translateZ(-.1em);
+      transform:rotateY(-179deg)translateZ(-.1em); 
     }
-
+    
     @media screen and (max-width:25em){
       .book{
         height:45em;
@@ -102,9 +102,9 @@
        left:25%;
         font-size:1.5em;
       }
-    }
-
-
+    }   
+    
+    
     .page:first-of-type h2{font-size:2.2em;text-align:left;margin:8.5em .25em 0}
 	.nto{
       width:12em;
@@ -144,27 +144,27 @@
   </style>
 </head>
 <body>
-
+  
   <section aria-label="AMP book example" aria-live="polite">
-    <amp-state id="page">
+    <amp-state id="pagenumber">
       <script type="application/json">1</script>
     </amp-state>
     <div class="controls-top">
-      Page
-      <input type="number" value="1" min="1" max="10" [value]="page"
-             on="input-throttled:AMP.setState({ page: event.valueAsNumber })" aria-controls="book" aria-label="page number">
-      <input type="range" value="1" min="1" max="10" [value]="page"
-             on="input-throttled:AMP.setState({ page: event.valueAsNumber })" aria-controls="book" aria-label="page selector">
+      Page 
+      <input type="number" value="1" min="1" max="10" [value]="pagenumber"
+             on="input-throttled:AMP.setState({ pagenumber: event.valueAsNumber })" aria-controls="book" aria-label="page number"> 
+      <input type="range" value="1" min="1" max="10" [value]="pagenumber"
+             on="input-throttled:AMP.setState({ pagenumber: event.valueAsNumber })" aria-controls="book" aria-label="page selector">
     </div>
     <div class="book" id="book" aria-label="AMP Book">
-      <div class="page open" [class]="(page == 1 ? 'page open' : 'page')" [aria-hidden]="(page == 1 ? 'false' : 'true')" [aria-selected]="(page == 1 ? 'true' : 'false')" role="group" aria-label="Page 1 of 10">
+      <div class="page open" [class]="(pagenumber == 1 ? 'page open' : 'page')" [aria-hidden]="(page == 1 ? 'false' : '-notrue')" [aria-selected]="(page == 1 ? 'true' : 'f-noalse')" role="group" aria-label="Page 1 of 10">
         <div class="nto">
           Northern Trail Outfitters
         </div>
         <h2>2021<br>CYCLING</h2>
         <div class="back"></div>
       </div>
-      <div class="page" [class]="(page == 2 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(page == 2 ? 'false' : 'true')" [aria-selected]="(page == 2 ? 'true' : 'false')" role="group" aria-label="Page 2 of 10">
+      <div class="page" [class]="(pagenumber == 2 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 2 ? 'false' : 'true')" [aria-selected]="(pagenumber == 2 ? 'true' : 'false')" role="group" aria-label="Page 2 of 10">
         <div class="bike">
           <h3>Electra Cruiser 1 Step-Through Women's Bike</h3>
           <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw6f69b1a9/images/medium/5113089AC8-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
@@ -173,7 +173,7 @@
         </div>
         <div class="back"></div>
       </div>
-      <div class="page" [class]="(page == 3 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(page == 3 ? 'false' : 'true')" [aria-selected]="(page == 3 ? 'true' : 'false')" role="group" aria-label="Page 3 of 10">
+      <div class="page" [class]="(pagenumber == 3 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 3 ? 'false' : 'true')" [aria-selected]="(pagenumber == 3 ? 'true' : 'false')" role="group" aria-label="Page 3 of 10">
         <div class="bike">
           <h3>Diamondback Clutch 2 27.5 Women's Bike</h3>
           <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw69ea7f96/images/medium/5112556AXP-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
@@ -182,7 +182,7 @@
         </div>
         <div class="back"></div>
       </div>
-      <div class="page" [class]="(page == 4 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(page == 4 ? 'false' : 'true')" [aria-selected]="(page == 4 ? 'true' : 'false')" role="group" aria-label="Page 4 of 10">
+      <div class="page" [class]="(pagenumber == 4 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 4 ? 'false' : 'true')" [aria-selected]="(pagenumber == 4 ? 'true' : 'false')" role="group" aria-label="Page 4 of 10">
         <div class="bike">
           <h3>Cannondale Tango 2 27.5&quot; Women's Bike</h3>
           <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw80d312b8/images/medium/5112993AAD-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
@@ -191,7 +191,7 @@
         </div>
         <div class="back"></div>
       </div>
-      <div class="page" [class]="(page == 5 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(page == 5 ? 'false' : 'true')" [aria-selected]="(page == 5 ? 'true' : 'false')" role="group" aria-label="Page 5 of 10">
+      <div class="page" [class]="(pagenumber == 5 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 5 ? 'false' : 'true')" [aria-selected]="(pagenumber == 5 ? 'true' : 'false')" role="group" aria-label="Page 5 of 10">
         <div class="bike">
           <h3>Pure Cycles Coaster Bike</h3>
           <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw0a169b9d/images/medium/5113027AAA-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
@@ -200,7 +200,7 @@
         </div>
         <div class="back"></div>
       </div>
-      <div class="page" [class]="(page == 6 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(page == 6 ? 'false' : 'true')" [aria-selected]="(page == 6 ? 'true' : 'false')" role="group" aria-label="Page 6 of 10">
+      <div class="page" [class]="(pagenumber == 6 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 6 ? 'false' : 'true')" [aria-selected]="(pagenumber == 6 ? 'true' : 'false')" role="group" aria-label="Page 6 of 10">
         <div class="bike">
           <h3>Early Rider Limited Trail 24 Hardtail Kids Mountain Bike</h3>
           <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dwdb89048e/images/medium/5113135AJN-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
@@ -209,7 +209,7 @@
         </div>
         <div class="back"></div>
       </div>
-      <div class="page" [class]="(page == 7 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(page == 7 ? 'false' : 'true')" [aria-selected]="(page == 7 ? 'true' : 'false')" role="group" aria-label="Page 7 of 10">
+      <div class="page" [class]="(pagenumber == 7 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 7 ? 'false' : 'true')" [aria-selected]="(pagenumber == 7 ? 'true' : 'false')" role="group" aria-label="Page 7 of 10">
         <div class="bike">
           <h3>Cannondale Cujo NEO 130 4 Electric Bike</h3>
           <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw4b5d9a19/images/medium/5113028ASL-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
@@ -218,7 +218,7 @@
         </div>
         <div class="back"></div>
       </div>
-      <div class="page" [class]="(page == 8 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(page == 8 ? 'false' : 'true')" [aria-selected]="(page == 8 ? 'true' : 'false')" role="group" aria-label="Page 8 of 10">
+      <div class="page" [class]="(pagenumber == 8 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 8 ? 'false' : 'true')" [aria-selected]="(pagenumber == 8 ? 'true' : 'false')" role="group" aria-label="Page 8 of 10">
         <div class="bike">
           <h3>Cannondale Quick CX 1 Bike</h3>
           <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw81ec36b8/images/medium/5112690AVR-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
@@ -227,7 +227,7 @@
         </div>
         <div class="back"></div>
       </div>
-      <div class="page" [class]="(page == 9 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(page == 9 ? 'false' : 'true')" [aria-selected]="(page == 9 ? 'true' : 'false')" role="group" aria-label="Page 9 of 10">
+      <div class="page" [class]="(pagenumber == 9 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 9 ? 'false' : 'true')" [aria-selected]="(pagenumber == 9 ? 'true' : 'false')" role="group" aria-label="Page 9 of 10">
         <div class="bike">
           <h3>Cannondale Quick 24 Kids' Bike</h3>
           <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw5a330ec2/images/medium/5113027BGY-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
@@ -236,7 +236,7 @@
         </div>
         <div class="back"></div>
       </div>
-      <div class="page" [class]="(page == 10 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(page == 10 ? 'false' : 'true')" [aria-selected]="(page == 10 ? 'true' : 'false')" role="group" aria-label="Page 10 of 10">
+      <div class="page" [class]="(pagenumber == 10 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 10 ? 'false' : 'true')" [aria-selected]="(pagenumber == 10 ? 'true' : 'false')" role="group" aria-label="Page 10 of 10">
         <div class="bike">
           <h3>GHOST Kato 5.9 Bike</h3>
           <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw15c73a25/images/medium/5113046AD4-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
@@ -246,9 +246,9 @@
       </div>
     </div>
     <div class="controls-bottom">
-    <button on="tap:AMP.setState({ page: page - 1 })" disabled [disabled]="page < 2" aria-controls="book">
+    <button on="tap:AMP.setState({ pagenumber: pagenumber - 1 })" disabled [disabled]="pagenumber < 2" aria-controls="book">
       Previous page</button>
-    <button on="tap:AMP.setState({ page: page + 1 })" [disabled]="page > 10" aria-controls="book">
+    <button on="tap:AMP.setState({ pagenumber: pagenumber + 1 })" [disabled]="pagenumber > 10" aria-controls="book">
       Next page</button>
     </div>
   </section>

@@ -6,8 +6,9 @@ export default function Demos() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Demos</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>AMP for Email demo templates</title>
+        <link rel="icon" href="/favicon.ico" />        
+        <meta name="description" content="AMP for Email demo templates"/>
       </Head>
 
       <main>
@@ -16,8 +17,13 @@ export default function Demos() {
 
         <ul className="demos">
           {Object.entries(demos).map(([title, demo]) =>
-            <li id="dynamic-hash">
+            <li id={`${title}`}>
               <h2>{demo.title}</h2>
+              {/* <picture>
+                <source srcset={demo.thumbnail.webp} type="image/webp"/>
+                <source srcset={demo.thumbnail.jpg} type="image/jpeg"/> 
+                <img src={demo.thumbnail.jpg} alt={`${demo.thumbnail.alt}`}/>
+              </picture> */}
               <img src={demo.thumbnailUrl} alt="dynamic alt text" />
               <p>{demo.description}</p>
               <h3>Components used</h3>
@@ -34,13 +40,8 @@ export default function Demos() {
                 <li>
                   <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`}>AMP playground</a>
                 </li>
-                <li>
-                  <a href="#">list.json</a>
-                </li>
-                <li>
-                  <a href="#">form.json</a>
-                </li>
-                <li><a href="#dynamic-hash">Link to this demo</a></li>
+{/* Add in additionalFiles, I'm not sure how to do each */}
+                <li><a href={`#${title}`}>Link to this demo</a></li>
               </ul>
             </li>
           )}
@@ -48,7 +49,7 @@ export default function Demos() {
       </main>
 
       <footer className={styles.footer}>
-        This is a footer
+
       </footer>
     </div>
   )

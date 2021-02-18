@@ -1,29 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
 }
-
 body{
+  font-family: Helvetica,Arial,sans-serif;
+  line-height: 1.5;
   background:var(--background, #eee);
   color:var(--text, #222);
+  margin: 1em 4vw;
 }
-
+h1{
+  font-size:3em;
+}
 a{
   color:var(--links, #0b5cab);
 }
@@ -32,7 +19,7 @@ ul.demos{
   margin:0;
   padding:0;
   columns: auto;
-  column-width:15em;
+  column-width:20em;
   column-gap: 1em;
 }
 ul.demos > li{
@@ -44,7 +31,7 @@ ul.demos > li{
     columns: 1;
     display:grid;
     grid-template-rows: masonry;
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
     gap:1em
   }
   ul.demos > li{
@@ -53,6 +40,7 @@ ul.demos > li{
 }
 ul.demos > li{
   border:.1em solid currentcolor;
+  border-radius:.5em;
   padding:1em;
   background:var(--background2, #fff);
 }
@@ -64,8 +52,9 @@ ul.demos img{
 }
 li:target {
   grid-column: span 2;
-  box-shadow:0 0 1em  #000;
+  box-shadow:0 0 1em  currentColor;
   scroll-margin-top:1em;
+  transform:scale(1.01)
 }
 @supports (display:grid){
   @media (min-width:30em){
@@ -76,6 +65,10 @@ li:target {
   }
 }
 @media (max-width:30em){
+  ul.demos{
+    column-width:auto;
+    grid-template-columns: 1fr;
+  }
   li:target {
     grid-column: auto;
   }
@@ -84,7 +77,7 @@ li:target {
   :root{
     --text: #eee;
     --background: #111;
-    --background2: #333;
+    --background2: #222;
     --links:#009EDB;
   }
 }

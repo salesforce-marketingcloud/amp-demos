@@ -15,6 +15,9 @@ module.exports = () => {
         if(!ampDemos[dir].componentsUsed) {
             ampDemos[dir].componentsUsed = [];
         }
+        if(!ampDemos[dir].additionalFiles) {
+          ampDemos[dir].additionalFiles = [];
+      }
         try {
             let html = readFileSync(resolve(__dirname, dir, 'demo.html')).toString();
             ampDemos[dir].html = html;
