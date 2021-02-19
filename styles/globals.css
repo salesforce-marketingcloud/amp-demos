@@ -51,15 +51,15 @@ ul.demos img{
 ul.demos p{
   white-space: pre-wrap;
 }
-li:target {
+ul.demos li:target {
   grid-column: span 2;
-  box-shadow:0 0 1em  currentColor;
+  box-shadow:0 .5em 1em .5em  var(--shadow, rgba(0,0,0,.1));
   scroll-margin-top:1em;
   transform:scale(1.01)
 }
 @supports (display:grid){
   @media (min-width:30em){
-    li:target img{
+    ul.demos li:target img{
       float: right;
       width: 50%;
     }
@@ -70,7 +70,7 @@ li:target {
     column-width:auto;
     grid-template-columns: 1fr;
   }
-  li:target {
+  ul.demos li:target {
     grid-column: auto;
   }
 }
