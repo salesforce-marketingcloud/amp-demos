@@ -1,6 +1,0 @@
-{
-    "title": "Filter Products",
-    "description": "Dynamically generate list of products at time of open. Display specific products based on user selection within email.",
-    "componentsUsed": ["amp-list", "amp-mustache", "amp-accordian", "amp-carousel", "amp-anim", "amp-bind", "amp-sidebar"],
-    "thumbnailUrl": "../img/product-filter.png"
-}

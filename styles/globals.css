@@ -48,6 +48,9 @@ ul.demos img{
   display:block;
   border:.1em solid var(--border,#dddbda);
 }
+ul.demos p{
+  white-space: pre-wrap;
+}
 li:target {
   grid-column: span 2;
   box-shadow:0 0 1em  currentColor;

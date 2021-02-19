@@ -10,8 +10,8 @@
     ],
     "thumnail":{
       "webp":"../img/NTO-book.webp",
-      "jpg":"",
+      "jpg":"../img/NTO-book.jpg",
       "alt":""
     },
-    "thumbnailUrl": "../img/NTO-book.webp"
+    "thumbnailUrl": "../img/NTO-book.jpg"
 }

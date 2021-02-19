@@ -24,7 +24,7 @@ export default function Demos() {
                 <source srcset={demo.thumbnail.jpg} type="image/jpeg"/> 
                 <img src={demo.thumbnail.jpg} alt={`${demo.thumbnail.alt}`}/>
               </picture> */}
-              <img src={demo.thumbnailUrl} alt="dynamic alt text" />
+              <img src={demo.thumbnailUrl} alt={`preview of ${demo.title}`} />
               <p>{demo.description}</p>
               <h3>Components used</h3>
               <ul className="components">
