@@ -4,14 +4,13 @@
     "componentsUsed": ["amp-bind"],
     "additionalFiles": [
       {
-        "href":"https://example.com/",
-        "text":"text"
+        "href":"",
+        "text":""
       }
     ],
-    "thumnail":{
+    "thumbnail":{
       "webp":"../img/NTO-book.webp",
       "jpg":"../img/NTO-book.jpg",
       "alt":""
-    },
-    "thumbnailUrl": "../img/NTO-book.jpg"
+    }
 }

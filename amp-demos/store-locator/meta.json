@@ -2,5 +2,15 @@
     "title": "Store Locator",
     "description": "Within the email, the recipient is able to search for a store location by entering a US postal code, and selecting additional search criteria.  ",
     "componentsUsed": ["amp-bind", "amp-form", "amp-mustache"],
-    "thumbnailUrl": "../img/store-locator.png"
+    "additionalFiles": [
+      {
+        "href":"",
+        "text":""
+      }
+    ],
+    "thumbnail":{
+      "webp":"",
+      "jpg":"../img/store-locator.png",
+      "alt":""
+    }
 }

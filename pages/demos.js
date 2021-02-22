@@ -2,7 +2,15 @@ import Head from 'next/head'
 import styles from '../styles/Demos.module.css'
 import demos from '../amp-demos/index.js'
 
+function chooseImage(thumbnail){
+  if (thumbnail.webp){
+    return <source srcset={thumbnail.webp} type="image/webp" media="(prefers-reduced-motion: no-preference)"/>;
+  }
+  return null
+}
+
 export default function Demos() {
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -18,13 +26,13 @@ export default function Demos() {
         <ul className="demos">
           {Object.entries(demos).map(([title, demo]) =>
             <li id={`${title}`}>
+              {demo.thumbnail.webp}
               <h2>{demo.title}</h2>
-              {/* <picture>
-                <source srcset={demo.thumbnail.webp} type="image/webp"/>
-                <source srcset={demo.thumbnail.jpg} type="image/jpeg"/> 
+              <picture>
+                {chooseImage(demo.thumbnail)}
+                <source srcset={demo.thumbnail.jpg} type="image/jpg"/> 
                 <img src={demo.thumbnail.jpg} alt={`${demo.thumbnail.alt}`}/>
-              </picture> */}
-              <img src={demo.thumbnailUrl} alt={`preview of ${demo.title}`} />
+              </picture>
               <p>{demo.description}</p>
               <h3>Components used</h3>
               <ul className="components">
@@ -40,7 +48,11 @@ export default function Demos() {
                 <li>
                   <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`} target="_blank">AMP playground</a>
                 </li>
-{/* Add in additionalFiles, I'm not sure how to do each */}
+                {demo.additionalFiles.map(({href, text}) => {
+                  return <li key={href}>
+                    <a href={`${href}`}>{text}</a>
+                  </li>;
+                })}
                 <li><a href={`#${title}`}>Link to this demo</a></li>
               </ul>
             </li>
