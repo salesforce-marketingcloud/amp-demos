@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start -p $(node -e 'console.log(process.env.PORT || 3000)' )",
+    "heroku-deploy": "git push heroku master"
   },
   "dependencies": {
     "autoprefixer": "^10.2.4",
