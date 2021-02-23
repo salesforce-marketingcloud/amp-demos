@@ -1,0 +1,134 @@
+{
+  "items": [
+    {
+      "ID": "0078",
+      "name": "NTO - Redwood City, CA",
+      "address": "2485 El Camino Real",
+      "stateCode": "CA",
+      "postalCode": "94063-2849",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(650) 480-5818",
+      "mapsLink": "https://maps.google.com/?daddr=37.474007,-122.218284"
+    },
+    {
+      "ID": "0077",
+      "name": "NTO - Mountain View, CA",
+      "address": "555 Showers Dr",
+      "stateCode": "CA",
+      "postalCode": "94040-1432",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(650) 316-6734",
+      "mapsLink": "https://maps.google.com/?daddr=37.401275,-122.107928"
+    },
+    {
+      "ID": "0090",
+      "name": "NTO - San Mateo, CA",
+      "address": "2220 Bridgepointe Pkwy",
+      "stateCode": "CA",
+      "postalCode": "94404-1569",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(650) 425-6659",
+      "mapsLink": "https://maps.google.com/?daddr=37.562016,-122.282155"
+    },
+    {
+      "ID": "0061",
+      "name": "NTO - Cupertino, CA",
+      "address": "20745 Stevens Creek Blvd",
+      "stateCode": "CA",
+      "postalCode": "95014-2123",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(408) 343-4001",
+      "mapsLink": "https://maps.google.com/?daddr=37.322966,-122.036058"
+    },
+    {
+      "ID": "0064",
+      "name": "NTO - Fremont, CA",
+      "address": "39201 Fremont Blvd",
+      "stateCode": "CA",
+      "postalCode": "94538-1301",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(510) 789-0912",
+      "mapsLink": "https://maps.google.com/?daddr=37.547065,-121.985527"
+    },
+    {
+      "ID": "0088",
+      "name": "NTO - San Jose, CA",
+      "address": "450 N Capitol Ave",
+      "stateCode": "CA",
+      "postalCode": "95133-1938",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(408) 273-3951",
+      "mapsLink": "https://maps.google.com/?daddr=37.373446,-121.84615"
+    },
+    {
+      "ID": "0086",
+      "name": "NTO - San Francisco, CA",
+      "address": "789 Mission St",
+      "stateCode": "CA",
+      "postalCode": "94103-3132",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(415) 343-6282",
+      "mapsLink": "https://maps.google.com/?daddr=37.783943,-122.404839"
+    },
+    {
+      "ID": "0034",
+      "name": "NTO - Alameda, CA",
+      "address": "2700 Fifth Street",
+      "stateCode": "CA",
+      "postalCode": "94501",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(510) 214-0941",
+      "mapsLink": "https://maps.google.com/?daddr=37.78871,-122.2795"
+    },
+    {
+      "ID": "0087",
+      "name": "NTO - San Francisco, CA",
+      "address": "2675 Geary Blvd",
+      "stateCode": "CA",
+      "postalCode": "94118-3400",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(415) 796-5290",
+      "mapsLink": "https://maps.google.com/?daddr=37.782258,-122.446952"
+    },
+    {
+      "ID": "0045",
+      "name": "NTO - Berkeley, CA",
+      "address": "2187 Shattuck Ave",
+      "stateCode": "CA",
+      "postalCode": "94704-1308",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(510) 982-3736",
+      "mapsLink": "https://maps.google.com/?daddr=37.869526,-122.267873"
+    },
+    {
+      "ID": "0035",
+      "name": "NTO - Albany, CA",
+      "address": "1057 Eastshore Hwy",
+      "stateCode": "CA",
+      "postalCode": "94710-1011",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(510) 982-3161",
+      "mapsLink": "https://maps.google.com/?daddr=37.884252,-122.308158"
+    },
+    {
+      "ID": "0079",
+      "name": "NTO - Richmond, CA",
+      "address": "4500 Macdonald Ave",
+      "stateCode": "CA",
+      "postalCode": "94805-2307",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(510) 253-1010",
+      "mapsLink": "https://maps.google.com/?daddr=37.93287,-122.327374"
+    },
+    {
+      "ID": "0095",
+      "name": "NTO - Walnut Creek, CA",
+      "address": "1871 N Main St",
+      "stateCode": "CA",
+      "postalCode": "94596-4106",
+      "storeHours": "Monday - Friday: 10:00 am - 9:00 pm<br />Saturday: 9:00 am - 6:00 pm<br />Sunday: 10:00 am - 5:00 pm",
+      "phone": "(925) 627-8228",
+      "mapsLink": "https://maps.google.com/?daddr=37.905042,-122.063673"
+    }
+  ]
+}

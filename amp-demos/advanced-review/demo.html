@@ -13,10 +13,51 @@
 
   <style amp4email-boilerplate>body{visibility:hidden}</style>
   <style amp-custom>
-    body {
-      font-family: monospace;
-      font-size: 1.15em;
+    .wrapper {
+      max-width: 38.5em;
+      margin: 0 auto;
+      font-family: verdana, arial, sans-serif;
+      font-size: 1rem;
+      background:#fff;
+      color:#393939;
       text-align: center;
+      padding: 0 1rem;
+    }
+    .header {
+      padding: 3em 1.25em;
+      text-align:center;
+    }
+    .header amp-img {
+      margin:0 auto;
+      max-width: 220px;
+    }
+    .footer {
+      text-align: center;
+      padding: 3em 1em 3em;
+      font-size:.8em;
+    }
+    .footer p {
+      text-align: center;
+      margin: 1.1em 1.33em;
+    }
+    .footer a {
+      color:#393939;
+    }
+    .footer .link{
+      font-weight:bold;
+      color:#6DCCEE;
+    }
+    .footer .social{
+      width:14em;
+      margin:1.1em auto;
+      display:flex;
+      justify-content: space-between;
+    }
+    .footer .footer-nav{
+      padding:1em 1em 2em;
+    }
+    .footer .footer-nav a{
+      text-decoration:none;
     }
     h2 {
       margin: .5em 0;
@@ -28,15 +69,24 @@
     label {
       display: inline-block;
       box-sizing: border-box;
-      /* width: 100%; */
-      /* max-width: 175px; */
-      margin: 11px;
-      padding: 11px 44px;
-      font-size: 1.6em;
-      background: #ebebeb;
-      border: 2px solid black;
-      border-radius: 11px;
-      box-shadow: 6px 6px 10px -4px #000;
+      min-width: 10em;
+      text-decoration: none;
+      color: #fff;
+      background-color: #097fb3;
+      text-align: center;
+      border-radius: 2em;
+      padding: 1em 2em;
+      margin: .2em 0;
+      border:.2em solid #eee;
+    }
+    label:hover {
+      cursor:pointer;
+      background-color:#07658f;
+    }
+    label:active {
+      border:.2em solid #b5b5b5;
+      text-decoration: underline;
+      text-decoration-color: #b5b5b5;
     }
     form + form{
       display:none;
@@ -65,48 +115,62 @@
       background-repeat:no-repeat;
     }
     .in-email-review {
-      display: grid;
-      grid-gap: 10px;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      font-size: 2em;
+      list-style-type:none;
+      text-align:left;
     }
-    .in-email-review div {
-      font-size: 1.4em;
-      padding: 1em 0.5em;
-      border: 1px solid black;
-      /* border-radius: 40px; */
-      /* box-shadow: 6px 6px 12px -5px #000; */
+    .dislike, .like {
+      padding: 0.6em;
     }
-    .in-email-completion .like { border-color: #408843; background: #6d9c6d3d;}
-    .in-email-completion .dislike { border-color: #540505; background: #e2646454;}
+    .in-email-review li {
+      margin:.8em 0;
+      box-shadow: #00000050 0px 5px 16px 2px;
+      border-radius: .5em;
+    }
+    .in-email-review li span {
+      display: inline-block;
+      min-width: 0.8em;
+    }
+    .in-email-completion { }
+    .in-email-completion .like { border-color: #408843; background: #6d9c6d14;}
+    .in-email-completion .dislike { border-color: #540505; background: #e176761a;}
     .no-matches-fallback { }
-  </style>
+</style>
 </head>
 <body>
 
-<amp-list id="reivewList" noloading width="auto" height="400" layout="fixed-height" src="https://pub.s4.exacttarget.com/f3mv00u33nh">
-<!-- <amp-list id="reivewList" noloading width="auto" height="400" layout="fixed-height" src="simple-review.json"> -->
+<article class="wrapper" aria-label="" lang="en">
+
+<amp-list id="reivewList" src="https://pub.s4.exacttarget.com/w1fformncrq">
+  <div class="header">
+    <amp-img layout="responsive" src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png"  width="348" height="142" alt="Northern Trail Outfitters"></amp-img>
+  </div>
+
+  <div placeholder>
+    <amp-img alt="Loading... Thank you for waiting" src="https://thumbs.gfycat.com/RelievedSilentArcticwolf-small.gif" width="100" height="100"></amp-img>
+  </div>
   <template type="amp-mustache">
 
 {{#prod_items}}
     <form id="product-{{id}}" method="post" [class]="myClass{{id}}"
-    action-xhr="https://example.com">
+    action-xhr="https://example.com/submit-form-product-{{id}}/">
 
     <div class="prod-img">
       <div style="background-image:url({{img}})"></div>
     </div>
 
-      <h2 class="prod-name">Do you like {{name}}?</h2>
-        <label>Yes
+      <h2 class="prod-name">{{name}}</h2>
+        <label>LIKE
           <input type="radio" name="product-{{id}}" value="LIKE_VALUE"
             on="change:
             product-{{id}}.submit,
-            AMP.setState({ myClass{{id}}: 'complete', myChoice{{id}}: 'like' })">
+            AMP.setState({ myClass{{id}}: 'complete', myChoice{{id}}: 'like', myText{{id}}: '✓' })">
         </label>
-        <label>No
+        <label>DISLIKE
           <input type="radio" name="product-{{id}}" value="DISLIKE_VALUE"
             on="change:
             product-{{id}}.submit,
-            AMP.setState({ myClass{{id}}: 'complete', myChoice{{id}}: 'dislike' })">
+            AMP.setState({ myClass{{id}}: 'complete', myChoice{{id}}: 'dislike', myText{{id}}: '✗' })">
         </label>
     </form>
 {{/prod_items}}
@@ -119,16 +183,47 @@
 {{/prod_items}}
 
   <div class="in-email-completion">
-    <h2>Thank you for your feedback!</h2>
-    <div class="in-email-review">
+    <ul class="in-email-review">
     {{#prod_items}}
-      <div [class]="myChoice{{id}}">{{name}}</div>
+      <li [class]="myChoice{{id}}">
+        <span [text]="myText{{id}}"></span>{{name}}
+      </li>
     {{/prod_items}}
-    </div>
+    </ul>
   </div>
+
+<div class="footer">
+  <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-logo-secondary-footer.png" height="3.25em" width="3.25em" alt=""></amp-img>
+
+  <p>To view this email as a web page, click <!-- <a class="link" href="%%view_email_url%%">here.</a>--> <a class="link">here.</a></p>
+
+  <p><span style="font-weight:bold;">%%Member_Busname%%</span><br><br>%%Member_Addr%%<br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%<br></p>
+
+  <div class="social">
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+  </div>
+
+  <div class="footer-nav">
+    <a href="https://northerntrailoutfitters.com/default/contact.html">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://northerntrailoutfitters.com/default/stores?showMap=true&amp;horizontalView=true">Store Locator</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://northerntrailoutfitters.com/default/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <!-- <a href="%%profile_center_url%%">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
+    <!-- <a href="%%unsub_center_url%%">Unsubscribe</a> -->
+    <a>Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a>Unsubscribe</a>
+  </div>
+</div>
+
 
   </template>
 </amp-list>
+
+</article>
+
 
 </body>
 </html>
