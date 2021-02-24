@@ -2,15 +2,10 @@
     "title": "Advanced Review",
     "description": "This example will cycle through a json object, and produce an individual form element for each.\n\nThe list itself is static, and loaded each time the email is opened. So, there is nothing preventing a repetitious submits.\n\nIf the list is not available, then the email will render a fallback message. Upon completion, the user is presented with a visual layout indicating selections.",
     "componentsUsed": ["amp-list", "amp-form", "amp-mustache"],
-    "additionalFiles": [
-      {
-        "href":"",
-        "text":""
-      }
-    ],
+    "additionalFiles": [],
     "thumbnail":{
       "webp":"",
-      "jpg":"../img/advanced-review.png",
+      "jpg":"../img/advanced-review-v2.png",
       "alt":""
     }
 }

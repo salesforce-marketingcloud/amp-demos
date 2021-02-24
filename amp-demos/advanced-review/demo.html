@@ -123,18 +123,22 @@
       padding: 0.6em;
     }
     .in-email-review li {
-      margin:.8em 0;
-      box-shadow: #00000050 0px 5px 16px 2px;
-      border-radius: .5em;
+      margin: .8em 0;
+      box-shadow: #00000087 0px 5px 16px 2px;
+      border-radius: 0.2em;
     }
     .in-email-review li span {
       display: inline-block;
       min-width: 0.8em;
     }
-    .in-email-completion { }
-    .in-email-completion .like { border-color: #408843; background: #6d9c6d14;}
-    .in-email-completion .dislike { border-color: #540505; background: #e176761a;}
-    .no-matches-fallback { }
+    .in-email-completion .like {
+      border-color: #408843; 
+      background: #6d9c6d14;
+    }
+    .in-email-completion .dislike {
+      border-color: #540505; 
+      background: #e176761a;
+    }
 </style>
 </head>
 <body>
@@ -153,7 +157,7 @@
 
 {{#prod_items}}
     <form id="product-{{id}}" method="post" [class]="myClass{{id}}"
-    action-xhr="https://example.com/submit-form-product-{{id}}/">
+    action-xhr="https://example.com/submit-form-product/">
 
     <div class="prod-img">
       <div style="background-image:url({{img}})"></div>
