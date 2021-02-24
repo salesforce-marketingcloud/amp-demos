@@ -1,11 +1,11 @@
 {
     "title": "Abandoned Cart",
     "description": "Content is populated on open. It can change based on day of the week, weather, inventory, price, and availability. The carousel also dynamically displays products based on the recipients weather forecast.",
-    "componentsUsed": ["amp-list", "amp-mustache", "amp-carousel", "SSJS"],
+    "componentsUsed": ["amp-list", "amp-mustache", "amp-carousel"],
     "additionalFiles": [
       {
-        "href":"",
-        "text":""
+        "href":"https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-programmatic-content.meta/mc-programmatic-content/ssjs_serverSideJavaScript.htm",
+        "text":"SSJS"
       }
     ],
     "thumbnail":{
