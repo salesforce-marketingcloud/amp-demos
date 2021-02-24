@@ -1,16 +1,11 @@
 {
     "title": "External submit review",
-    "description": "Creates the illusion that form submissions have been converted from POST to GET in order to redirect to an external page.",
+    "description": "One advantage of AMP4Email is the ability to submit a form and remain in the email.\n\nWhile this is an advantage, it may not align with a particular UX.\n\nUsing this approach creates the illusion that form submissions have been converted from POST to GET in order to redirect to an external page.",
     "componentsUsed": ["amp-form", "amp-mustache"],
-    "additionalFiles": [
-      {
-        "href":"",
-        "text":""
-      }
-    ],
+    "additionalFiles": [],
     "thumbnail":{
       "webp":"",
-      "jpg":"../img/form-ext-submit-rating.png",
+      "jpg":"../img/form-ext-submit-rating-v2.png",
       "alt":""
     }
 }
