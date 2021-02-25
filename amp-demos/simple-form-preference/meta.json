@@ -2,12 +2,7 @@
     "title": "Simple form Preference",
     "description": "Simple form which submits data to an endpoint and returns a message",
     "componentsUsed": ["amp-mustache", "amp-form", "amp-anim", "amp-selector"],
-    "additionalFiles": [
-      {
-        "href":"",
-        "text":""
-      }
-    ],
+    "additionalFiles": [],
     "thumbnail":{
       "webp":"",
       "jpg":"../img/simple-preference.png",
