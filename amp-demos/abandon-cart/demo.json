@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "products": [
+        {
+          "dayOfWeek": "Tuesday",
+          "dailyMsg": "Happy Tuesday! Looks like you left something in your cart!",
+          "id": "5112783BDS",
+          "url": "https://www.northerntrailoutfitters.com/default/pure-cycles-coaster-bike-5112783BDS.html",
+          "name": "Pure Cycles Coaster Bike",
+          "price": [
+            {
+              "discounted": false,
+              "discount_price": "$179.00",
+              "original_price": "$279.00"
+            }
+          ],
+          "shortDescription": "one speed, no cables, no nonsense",
+          "longDescription": "The Pure Cycles Coaster is biking made simple. 1 speed, no cables, no levers, no nonsense-just you, your bike and the road. It's great for quick errands, slow rolls and late-night party rides.",
+          "image": "https://image.s4.sfmc-content.com/lib/fe9815747266017d71/m/1/bafac201-a379-4c95-a4f3-ab08e4239747.jpg",
+          "inventory": [
+            {
+              "free_ship_incentive": true,
+              "items_in_stock": "9"
+            }
+          ],
+          "colors": [
+            "green",
+            "red",
+            "yellow",
+            "pink"
+          ],
+          "sizes": [
+            "50cm",
+            "54cm",
+            "58cm"
+          ],
+          "features": [
+            {
+              "feature": "Hands-free coaster brake allows easy, intuitive stopping—just push back on the pedals to stop"
+            },
+            {
+              "feature": "Lightweight steel frame is stronger than aluminum and helps to soften the vibrations of the road; sealed bottom bracket supplies smooth pedaling"
+            },
+            {
+              "feature": "Custom-engineered geometry and sweptback bars provide a comfortable, upright ride"
+            },
+            {
+              "feature": "Easy-riding single-speed bike is great for quick errands and recreational rides around town"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

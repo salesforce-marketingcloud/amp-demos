@@ -1,0 +1,196 @@
+<!-- {{={< >}=}} -->
+<!doctype html>
+<html amp4email data-css-strict lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+<style amp-custom>
+    .wrapper {
+      max-width: 38.5em;
+      margin: 0 auto;
+      font-family: arial, sans-serif;
+      font-size: 1rem;
+      background:#fff;
+      color:#393939;
+    }
+    .header {
+      padding: 3em 1.25em 0em;
+      text-align:center;
+    }
+    .header amp-img {
+      margin:0 auto;
+      max-width: 220px;
+    }
+    .footer {
+      text-align: center;
+      padding: 3em 1em 3em;
+      font-size:.8em;
+    }
+    .footer p {
+      text-align: center;
+      margin: 1.1em 1.33em;
+    }
+    .footer a {
+      color:#393939;
+    }
+    .footer .link{
+      font-weight:bold;
+      color:#6DCCEE;
+    }
+    .footer .social{
+      width:14em;
+      margin:1.1em auto;
+      display:flex;
+      justify-content: space-between;
+    }
+    .footer .footer-nav{
+      padding:1em 1em 2em;
+    }
+    .footer .footer-nav a{
+      text-decoration:none;
+    }
+    .title input, .review textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: .5em;
+      font: inherit;
+      margin: .5em 0;
+      color: #897f7f;
+      border: 1px solid #76767676;
+    }
+    textarea {
+      height: 150px;
+    }
+    .submit {
+      display: inline-block;
+      box-sizing: border-box;
+      min-width: 10em;
+      text-decoration: none;
+      color: #fff;
+      background-color: #097fb3;
+      text-align: center;
+      border-radius: 2em;
+      padding: 1em 2em;
+      margin: .2em 0;
+      border:.2em solid #eee;
+    }
+    .submit:hover {
+      cursor:pointer;
+      background-color:#07658f;
+    }
+    .submit:active {
+      border:.2em solid #b5b5b5;
+      text-decoration: underline;
+      text-decoration-color: #b5b5b5;
+    }
+    .amp-form-submit-success .faux {
+      display: none;
+    }
+    h2 {
+      padding: 0 2em;
+      text-align: center;
+    }
+    h2 span {
+      font-style: italic;
+    }
+    amp-img {
+      max-width:350px;
+      margin:0 auto;
+    }
+    .element {
+      display: block;
+    }
+    .input {
+      display: none;
+    }
+    .ratings {
+      display: inline-block;
+    }
+    .ratings label {
+      font-size: 3.5em;
+      color: #097fb3;
+    }
+    .rating-default:checked ~* label {
+      color: #ccc;
+    }
+    .ratings:hover label {
+      color: #6dccee;
+    }
+    .ratings label:hover ~* {
+      color: #ccc;
+    }
+    .ratings input:checked +* ~* {
+      color: #ccc;
+    }
+
+</style>
+</head>
+<body>
+
+<article class="wrapper" aria-label="placeholder aria label" lang="en">
+
+  <div class="header">
+    <amp-img layout="responsive" src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png"  width="348" height="142" alt="Northern Trail Outfitters"></amp-img>
+    <h2>What do you think of your <span>Sport Pulse Wireless Earbuds</span>?</h2>
+  </div>
+
+
+  <amp-img layout="responsive" src="https://s3-us-west-2.amazonaws.com/nto-products/products1110/502300.jpg"  width="111" height="111" alt="Northern Trail Outfitters"></amp-img>
+
+  <form action-xhr="https://pub.s4.exacttarget.com/sr0eggpcjlj" method="get" id="ic-form">
+
+    <input type="radio" name="rating" class="rating-default input" value="" checked>
+    <div class="ratings"><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="1" id="rating-1"><label for="rating-1">★</label><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="2" id="rating-2"><label for="rating-2">★</label><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="3" id="rating-3"><label for="rating-3">★</label><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="4" id="rating-4"><label for="rating-4">★</label><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="5" id="rating-5"><label for="rating-5">★</label></div>
+
+    <label class="element title"><strong>Title:</strong>
+      <input type="text" name="title" on="input-debounced:ic-form.submit">
+    </label>
+
+    <label class="element review"><strong>Summary:</strong>
+      <textarea name="review" on="input-debounced:ic-form.submit"></textarea>
+    </label>
+
+    <span class="submit faux">SUBMIT YOUR REVIEW</span>
+
+    <div submit-success>
+      <template type="amp-mustache">
+        <a class="submit" href="{{url}}">SUBMIT YOUR REVIEW</a>
+        <div><b>visual href value:</b><br>{{url}}</div>
+      </template>
+    </div>
+
+  </form>
+
+<div class="footer">
+  <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-logo-secondary-footer.png" height="3.25em" width="3.25em" alt=""></amp-img>
+
+  <p>To view this email as a web page, click <!-- <a class="link" href="%%view_email_url%%">here.</a>--> <a class="link">here.</a></p>
+
+  <p><span style="font-weight:bold;">%%Member_Busname%%</span><br><br>%%Member_Addr%%<br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%<br></p>
+
+  <div class="social">
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+  </div>
+
+  <div class="footer-nav">
+    <a href="https://northerntrailoutfitters.com/default/contact.html">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://northerntrailoutfitters.com/default/stores?showMap=true&amp;horizontalView=true">Store Locator</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://northerntrailoutfitters.com/default/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <!-- <a href="%%profile_center_url%%">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
+    <!-- <a href="%%unsub_center_url%%">Unsubscribe</a> -->
+    <a>Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a>Unsubscribe</a>
+  </div>
+</div>
+
+</article>
+
+</body>
+</html>

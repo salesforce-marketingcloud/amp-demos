@@ -1,0 +1,256 @@
+<!-- {{={< >}=}} -->
+<!doctype html>
+<html amp4email lang="en" data-css-strict>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    body{font-family:arial, sans-serif}
+    .controls-top{
+      text-align:center;
+    }
+    .controls-top input[type="number"]{
+      width: 3em;
+      text-align: center;
+      padding-left: 1em;
+    }
+    .controls-top input[type="range"]{
+      display:block;
+      margin:0 auto;
+      width:80%;
+    }
+    .controls-bottom, 
+    .controls-back{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: space-evenly;
+    }
+    .controls-bottom button,
+    .controls-back button{
+      border:none;
+      border-radius:.25em;
+      font-size:inherit;
+      padding:.5em 1em;
+      margin:.5em ;
+      color: #fff;
+      background-color: #215ca0;
+    }
+    .controls-bottom button[disabled]{
+      background-color: #aaa;
+    }
+    .book{
+      position:relative;
+      height:30em;
+      transform-style: preserve-3d;
+      perspective:100em;
+      background:#ccc;
+      padding:2em;
+      font-size:2vw;
+    }
+    .page{
+      display:inline-block;
+      height:30em;
+      width:20em;
+      background:#eee;
+      background: linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);
+      position:absolute;
+      left:50%;
+      border-radius:0 1em 1em 0;
+      transition:transform 1s;
+      transform-origin:left;
+      transform-style: preserve-3d;
+    }
+    .page .back{
+      position: absolute;
+      top:0;
+      right:0;
+      bottom:0;
+      left:0;
+      background:#eee;
+      border-radius:1em 0 0 1em;
+      background: linear-gradient(-90deg, #ccc 0%, #ddd 1%, #eee 10%, #f9f9f9 100%);
+      transform: rotateY(180deg) translateZ(.1em);
+      box-shadow:-0.8em 0.3em 0.7em rgba(0,0,0,0.1)
+    }
+    .page:first-of-type,
+    .page:last-of-type .back{
+      background-size:cover, 100% 100%;
+      background-position:79em center, center;
+      background-image: url(https://www.northerntrailoutfitters.com/dw/image/v2/BDPX_PRD/on/demandware.static/-/Library-Sites-NTO-SFRASharedLibrary/default/dwf3bc4a39/images/category/gear-subcategory-cycling-1400-200.jpg), linear-gradient(45deg, rgba(255,255,255,0.2) 0%, #0000 40%, rgba(0,0,0,0.3) 100%);
+      background-blend-mode:overlay;
+      color:#ddd;
+      box-shadow:inset 0 0 1em rgba(0,0,0,0.4);
+    }
+
+    .page.open{
+      transform:rotateY(-2deg)translateZ(.1em);
+    }
+    .page.open ~ .page{
+      transform:rotateY(-1deg)translateZ(.1em);
+    }
+    .page:not(.open){
+      transform:rotateY(-179deg)translateZ(-.1em); 
+    }
+    
+    @media screen and (max-width:25em){
+      .book{
+        height:45em;
+      }
+      .page{
+       left:25%;
+        font-size:1.5em;
+      }
+    }   
+    
+    
+    .page:first-of-type h2{font-size:2.2em;text-align:left;margin:8.5em .25em 0}
+	.nto{
+      width:12em;
+      height:5.5em;
+      background:url(https://www.northerntrailoutfitters.com/on/demandware.static/Sites-NTOSFRA-Site/-/default/dw2d5d2042/images/logo-alt.svg) center / contain no-repeat #fff;;
+      color:transparent;
+      opacity:.9;
+      border-radius:0 0 2em;
+            box-shadow:inset 1em .5em 1em -.5em rgba(0,0,0,0.1);
+    }
+    .bike{text-align:center;}
+    .bike h3{font-size:1.4em;margin:1.5em 0 0}
+    .bike p{
+      margin:0 0 2em;
+      font-size:1.2em;
+    }
+    .bike a{
+      font-size:1.1em;
+      color: #097fb3;
+      border: .1em solid #097fb3;
+      text-decoration:none;
+      padding:.5em 1em;
+    }
+    .bike a:hover{
+      color: #fff;
+      background:#097fb3;
+    }
+    .bike .img{
+      height: 14em;
+      width: 100%;
+      background-size:80%, cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-blend-mode: multiply;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  
+  <section aria-label="AMP book example" aria-live="polite">
+    <amp-state id="pagenumber">
+      <script type="application/json">1</script>
+    </amp-state>
+    <div class="controls-top">
+      Page 
+      <input type="number" value="1" min="1" max="10" [value]="pagenumber"
+             on="input-throttled:AMP.setState({ pagenumber: event.valueAsNumber })" aria-controls="book" aria-label="page number"> 
+      <input type="range" value="1" min="1" max="10" [value]="pagenumber"
+             on="input-throttled:AMP.setState({ pagenumber: event.valueAsNumber })" aria-controls="book" aria-label="page selector">
+    </div>
+    <div class="book" id="book" aria-label="AMP Book">
+      <div class="page open" [class]="(pagenumber == 1 ? 'page open' : 'page')" [aria-hidden]="(page == 1 ? 'false' : '-notrue')" [aria-selected]="(page == 1 ? 'true' : 'f-noalse')" role="group" aria-label="Page 1 of 10">
+        <div class="nto">
+          Northern Trail Outfitters
+        </div>
+        <h2>2021<br>CYCLING</h2>
+        <div class="back"></div>
+      </div>
+      <div class="page" [class]="(pagenumber == 2 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 2 ? 'false' : 'true')" [aria-selected]="(pagenumber == 2 ? 'true' : 'false')" role="group" aria-label="Page 2 of 10">
+        <div class="bike">
+          <h3>Electra Cruiser 1 Step-Through Women's Bike</h3>
+          <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw6f69b1a9/images/medium/5113089AC8-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
+          <p>$254.89</p>
+          <a href="https://www.northerntrailoutfitters.com/default/electra-cruiser-1-step-through-women%27s-bike-5113089AC8.html">Buy now</a>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="page" [class]="(pagenumber == 3 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 3 ? 'false' : 'true')" [aria-selected]="(pagenumber == 3 ? 'true' : 'false')" role="group" aria-label="Page 3 of 10">
+        <div class="bike">
+          <h3>Diamondback Clutch 2 27.5 Women's Bike</h3>
+          <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw69ea7f96/images/medium/5112556AXP-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
+          <p>$2,448.93</p>
+          <a href="https://www.northerntrailoutfitters.com/default/diamondback-clutch-2-27.5-women%27s-bike---2017-5112556AXP.html">Buy now</a>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="page" [class]="(pagenumber == 4 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 4 ? 'false' : 'true')" [aria-selected]="(pagenumber == 4 ? 'true' : 'false')" role="group" aria-label="Page 4 of 10">
+        <div class="bike">
+          <h3>Cannondale Tango 2 27.5&quot; Women's Bike</h3>
+          <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw80d312b8/images/medium/5112993AAD-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
+          <p>$1,000.00</p>
+          <a href="https://www.northerntrailoutfitters.com/default/cannondale-tango-2-27.5%22-women%27s-bike---2019-5112993AAD.html">Buy now</a>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="page" [class]="(pagenumber == 5 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 5 ? 'false' : 'true')" [aria-selected]="(pagenumber == 5 ? 'true' : 'false')" role="group" aria-label="Page 5 of 10">
+        <div class="bike">
+          <h3>Pure Cycles Coaster Bike</h3>
+          <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw0a169b9d/images/medium/5113027AAA-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
+          <p>$400.00</p>
+          <a href="https://www.northerntrailoutfitters.com/default/cannondale-quick-24-kids%27-bike-5113027AAA.html">Buy now</a>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="page" [class]="(pagenumber == 6 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 6 ? 'false' : 'true')" [aria-selected]="(pagenumber == 6 ? 'true' : 'false')" role="group" aria-label="Page 6 of 10">
+        <div class="bike">
+          <h3>Early Rider Limited Trail 24 Hardtail Kids Mountain Bike</h3>
+          <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dwdb89048e/images/medium/5113135AJN-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
+          <p>$1,099.00</p>
+          <a href="https://www.northerntrailoutfitters.com/default/early-rider-limited-trail-24%22-hardtail-kids%27-mountain-bike-5113135AJN.html">Buy now</a>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="page" [class]="(pagenumber == 7 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 7 ? 'false' : 'true')" [aria-selected]="(pagenumber == 7 ? 'true' : 'false')" role="group" aria-label="Page 7 of 10">
+        <div class="bike">
+          <h3>Cannondale Cujo NEO 130 4 Electric Bike</h3>
+          <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw4b5d9a19/images/medium/5113028ASL-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
+          <p>$4,200.00</p>
+          <a href="https://www.northerntrailoutfitters.com/default/cannondale-cujo-neo-130-4-electric-bike---2019-5113028ASL.html">Buy now</a>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="page" [class]="(pagenumber == 8 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 8 ? 'false' : 'true')" [aria-selected]="(pagenumber == 8 ? 'true' : 'false')" role="group" aria-label="Page 8 of 10">
+        <div class="bike">
+          <h3>Cannondale Quick CX 1 Bike</h3>
+          <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw81ec36b8/images/medium/5112690AVR-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
+          <p>$1,365.00</p>
+          <a href="https://www.northerntrailoutfitters.com/default/cannondale-quick-cx-1-bike---2018-5112690AVR.html">Buy now</a>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="page" [class]="(pagenumber == 9 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 9 ? 'false' : 'true')" [aria-selected]="(pagenumber == 9 ? 'true' : 'false')" role="group" aria-label="Page 9 of 10">
+        <div class="bike">
+          <h3>Cannondale Quick 24 Kids' Bike</h3>
+          <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw5a330ec2/images/medium/5113027BGY-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
+          <p>$400.00</p>
+          <a href="https://www.northerntrailoutfitters.com/default/cannondale-quick-24-kids%27-bike-5113027BGY.html">Buy now</a>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="page" [class]="(pagenumber == 10 ? 'page open' : 'page')" aria-hidden="true" [aria-hidden]="(pagenumber == 10 ? 'false' : 'true')" [aria-selected]="(pagenumber == 10 ? 'true' : 'false')" role="group" aria-label="Page 10 of 10">
+        <div class="bike">
+          <h3>GHOST Kato 5.9 Bike</h3>
+          <div class="img" style="background-image: url(https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw15c73a25/images/medium/5113046AD4-0.jpg), linear-gradient(90deg, #ddd 0%, #eee 10%, #f9f9f9 100%);"></div>
+          <p>$999.95</p>
+          <a href="https://www.northerntrailoutfitters.com/default/ghost-kato-5.9-bike---2019-5113046AD4.html">Buy now</a>
+        </div><div class="back"></div>
+      </div>
+    </div>
+    <div class="controls-bottom">
+    <button on="tap:AMP.setState({ pagenumber: pagenumber - 1 })" disabled [disabled]="pagenumber < 2" aria-controls="book">
+      Previous page</button>
+    <button on="tap:AMP.setState({ pagenumber: pagenumber + 1 })" [disabled]="pagenumber > 10" aria-controls="book">
+      Next page</button>
+    </div>
+  </section>
+</body>
+</html>

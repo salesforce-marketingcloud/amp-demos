@@ -1,0 +1,373 @@
+<!-- {{={< >}=}} -->
+<!doctype html>
+<html amp4email data-css-strict lang="en">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-timeago" src="https://cdn.ampproject.org/v0/amp-timeago-0.1.js"></script>
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden
+    }
+  </style>
+  <style amp-custom>
+    .wrapper {
+      max-width: 38.5em;
+      margin: 0 auto;
+      font-family: arial, sans-serif;
+      font-size: 1rem;
+      background:#fff;
+      color:#393939;
+      text-align:center;
+    }
+    .header {
+      padding: 3em 1.25em 2em;
+      text-align:center;
+    }
+    .main {
+      padding: 1em;
+    }
+    .footer {
+      text-align: center;
+      padding: 1em 1em 3em;
+      font-size:.8em;
+    }
+    .footer p {
+      text-align: center;
+      margin: 1.1em 1.33em;
+    }
+    .footer a {
+      color:#393939;
+    }
+    .footer .link{
+      font-weight:bold;
+      color:#6DCCEE;
+    }
+    .footer .social{
+      width:14em;
+      margin:1.1em auto;
+      display:flex;
+      justify-content: space-between;
+    }
+    .footer .footer-nav{
+      padding:1em 1em 2em;
+    }
+    .footer .footer-nav a{
+      text-decoration:none;
+    }
+
+    .hero{
+      max-width:14em;
+      margin:0 auto;
+    }
+    .banner{
+      padding:1em;
+      background:#EDFAFD
+    }
+    h1{
+      font-size:1.5em;
+      text-align:center;
+      color:#097FB3;
+    }
+    .banner-text{
+      width:75%;
+      min-width:14em;
+      margin:1.5em auto;
+      text-align:center;
+      font-size:1.1em;
+    }
+   	hr{
+      border:none;
+      border-bottom:.1em solid #e5e5e5;
+    }
+    form{
+      max-width:30em;
+      margin:0 auto;
+    }
+    form h2{
+      text-transform:uppercase;
+      font-size:1em;
+      text-align:center;
+      color:#097FB3;
+    }
+    form h3{
+      font-size:.8em;
+      font-weight:normal;
+    }
+    form p{
+      text-align:center;
+      font-size:.9em;
+      margin:1.5em 0;
+    }
+    .italic{
+      font-style: italic;
+    }
+
+
+
+    form.amp-form-submit-success .success-hide{
+      display:none;
+    }
+    #success amp-timeago{
+    	display:inline;
+    }
+    .pickday{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: space-between;
+    }
+    .calendar{
+      font-size:.8em;
+      height:6.5em;
+      width:8em;
+      border:.1em solid #097FB3;
+      color:#097FB3;
+      text-transform:uppercase;
+    }
+    .calendar span{
+      display:block;
+      text-align:center;
+    }
+    .calendar span:nth-of-type(1){
+      background:#097FB3;
+      color:#fff;
+      padding:.5em;
+      outline:.1em solid #097FB3;
+    }
+    .calendar span:nth-of-type(2){
+      border-top:.2em solid #fff;
+      margin:0 .25em;
+      padding-top:.25em;
+    }
+    .calendar span:nth-of-type(3){
+      font-size:2em;
+    }
+    amp-selector .calendar[selected]{
+      outline:none;
+      background:#097FB3;
+      color:#fff;
+    }
+
+    .picklocation select{
+      border:.1em solid #097FB3;
+      color: #097FB3;
+      padding: .5em;
+      margin: 2em 0;
+      width: 100%;
+    }
+
+    .picklocation select option[disabled]{
+      text-transform:uppercase;
+    }
+
+    .times{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: center;
+    }
+    .btn{
+      display: table;
+      color: #393939;
+      border:.1em solid #e5e5e5;
+      width:6em;
+      margin:.25em;
+    }
+    .btn input{
+      float: left;
+      margin-top: .75em;
+    }
+    .btn input + span{
+      display: block;
+      padding:.5em .5em .5em 1.4em;
+    }
+    .btn input:checked + span{
+      background-color: #097fb3;
+      color:#fff;
+    }
+    .submit-btn{
+      color: #fff;
+      background-color: #097fb3;
+      text-transform:uppercase;
+      border:none;
+      padding: .8em 2em;
+      font-size: 1em;
+      margin: 0 auto;
+      display: block;
+      border-radius:1.5em;
+    }
+    .submit-btn[disabled]{
+      background-color: #ccc;
+    }
+    form.amp-form-submitting .submit-btn,
+    form.amp-form-submit-success .success-hide{
+      display:none;
+    }
+
+    [placeholder],
+    [submitting]{
+      min-height:20em;
+      padding:2em;
+      text-align:center;
+    }
+    @media screen and (max-width: 28.5em){
+      .pickday{
+        justify-content: space-evenly;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="wrapper" aria-label="NTO, Book new bike set up appointment" lang="en">
+    <div class="header">
+      <amp-img src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" height="3.8em" width="9.4em" alt="Northern Trail Outfitters"></amp-img>
+    </div>
+    <div class="main">
+      <amp-img src="https://www.northerntrailoutfitters.com/on/demandware.static/-/Sites-nto-gear/default/dw27249499/images/large/5112990AAE-1.jpg" height="22em" width="22em" layout="responsive" class="hero"></amp-img>
+      <div class="banner">
+      <h1>Thanks for your purchase!</h1>
+      <p class="banner-text">We hope you like your new <b>Cannondale Foray 1 27.5" Women's Bike.</b></p>
+      <p class="banner-text">Need help setting up your bike before you’re ready to hit the trails? Book an appointment with one of our NTO bike engineers by selecting a date, location, and time slot from the options below.</p>
+      </div>
+
+      <form  method="post" action-xhr="https://pub.s4.exacttarget.com/hgiencxlke1" id="bookingForm">
+        <amp-list width="100" height="200" id="list" layout="container"
+        src="https://pub.s4.exacttarget.com/hgiencxlke1" binding="refresh">
+          <template type="amp-mustache">
+            {{#hasAppt}}
+              <h2> <amp-img src="https://assets.codepen.io/51773/NTOAMP-icon-appointment.png" height="1em" width="1em" alt=""></amp-img> your appointment is booked</h2>
+            <p>You appointment wiil be on {{apptDate}}.</p>
+            <p>We look forward to seeing you in <amp-timeago width="160" height="20" datetime="{{apptISO}}" > </amp-timeago></p>
+            {{/hasAppt}}
+
+            {{^hasAppt}}
+            <h2> <amp-img src="https://assets.codepen.io/51773/NTOAMP-icon-appointment.png" height="1em" width="1em" alt=""></amp-img> find an appointment</h2>
+            <h3 class="success-hide">Select the date the works best for you:</h3>
+
+            <amp-selector id="day" layout="container" class="pickday success-hide"
+             on="select:AMP.setState({ day: event.targetOption, locationId: null, selected: false, displaytime: '' }), bookingForm.clear, list.changeToLayoutContainer()">
+              {{#days}}
+                <div class="calendar" option="{{name}}">
+                  <span>{{name}}</span>
+                  <span>{{month}}</span>
+                  <span>{{date}}</span>
+                </div>
+              {{/days}}
+            </amp-selector>
+
+            <div class="picklocation success-hide">
+              {{#days}}
+              <select name="storeID" class="locations {{name}}" hidden [hidden]="day != '{{name}}'"
+                      on="change:AMP.setState({ locationId: event.value, selected: false, displaytime: ''})">
+                <option disabled selected>Select your nearby store</option>
+                {{#location}}
+                <option value="{{ID}}">{{name}}, {{address}}</option>
+                {{/location}}
+              </select>
+              {{/days}}
+            </div>
+
+            {{#days}}
+            <div hidden [hidden]="day != '{{name}}'" class="success-hide">
+              {{#location}}
+              <div hidden [hidden]="locationId != '{{ID}}'">
+                <h3>Select from available timeslots:</h3>
+                <div class="times">
+                {{#times}}
+                <label class="btn">
+                  <input type="radio" name="datetime" value="{{iso}}" required
+                      on="change:AMP.setState({selected:event.checked, isotime:'{{iso}}', displaytime:' at {{display}}' })">
+                  <span>{{display}}</span>
+                </label>
+                {{/times}}
+                </div>
+              </div>
+              {{/location}}
+            </div>
+            {{/days}}
+
+
+            {{/hasAppt}}
+
+
+
+
+
+            <p class="italic" [text]="'Your appointment will be  on ' + day +  displaytime + '.'">
+              Select a time and location above.
+            </p>
+            <input type="submit" class="submit-btn success-hide" value="Book Appointment" disabled [disabled]="selected != true">
+            <div submitting>
+              <amp-anim src="https://thumbs.gfycat.com/RelievedSilentArcticwolf-small.gif" height="50" width="50" alt=""></amp-anim>
+            </div>
+
+	      </template>
+
+          <div placeholder>
+            <strong>Loading avalible time slots...</strong><br><br>
+            <amp-anim src="https://thumbs.gfycat.com/RelievedSilentArcticwolf-small.gif" height="50" width="50" alt=""></amp-anim>
+          </div>
+          <div fallback>
+            <p>There was an error loading the apointments.
+              <br><br>
+              Please try again later or call us on 1-(800)-555-0199</p>
+          </div>
+        </amp-list>
+        <div submit-success id="success">
+          <template type="amp-mustache">
+            <p>We look forward to seeing you in <amp-timeago width="160" height="20" datetime="{{datetime}}" > </amp-timeago></p>
+            <p>Thanks for using our new in email booking system.</p>
+          </template>
+        </div>
+        <div submit-error template="submit_error_template">
+          <h2>
+            Uh Oh!
+          </h2>
+          Looking like something went wrong, please try again.
+          <button on="tap:myAmpList.refresh">Refresh list</button>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="footer">
+      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-logo-secondary-footer.png" height="3.25em" width="3.25em" alt=""></amp-img>
+      <p> To view this email as a web page, click
+          <!--
+          <a class="link" href="%%view_email_url%%">here.</a>
+          --><a class="link">here.</a>
+      </p>
+      <p>
+                  <span style="font-weight:bold;">%%Member_Busname%%</span>
+                  <br>
+                  <br>%%Member_Addr%%
+                  <br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%
+                  <br>
+      </p>
+      <div class="social">
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+      </div>
+      <div class="footer-nav">
+        <a href="https://northerntrailoutfitters.com/default/contact.html">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://northerntrailoutfitters.com/default/stores?showMap=true&amp;horizontalView=true">Store Locator</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://northerntrailoutfitters.com/default/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <!--
+        <a href="%%profile_center_url%%">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="%%unsub_center_url%%">Unsubscribe</a>
+        -->
+        <a >Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a >Unsubscribe</a>
+      </div>
+    </div>
+  </article>
+</body>
+</html>

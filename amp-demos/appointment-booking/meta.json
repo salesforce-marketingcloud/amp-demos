@@ -1,0 +1,11 @@
+{
+    "title": "Appointment Booking",
+    "description": "Schedule an appointment within the email. Availability information is stored in external json file, and can relate to data extension entries in real time. This example will let recipient chose date, location, time, and display a confirmation.",
+    "componentsUsed": ["amp-list", "amp-mustache", "amp-form", "amp-selector", "amp-anim", "amp-bind", "amp-timeago"],
+    "additionalFiles": [],
+    "thumbnail":{
+      "webp":"",
+      "jpg":"../img/appointment-booking.png",
+      "alt":""
+    }
+}

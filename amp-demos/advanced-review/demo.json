@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "prod_items": [
+        {
+          "id": "1",
+          "img": "https://production-internal-ccdemo.demandware.net/on/demandware.static/-/Sites-nto-gear/default/dw6dd0149c/images/large/4060518A2X-0.jpg",
+          "name": "Surge Backpack"
+        },
+        {
+          "id": "2",
+          "img": "https://production-internal-ccdemo.demandware.net/on/demandware.static/-/Sites-nto-gear/default/dw96359f6c/images/large/4100813ABQ-0.jpg",
+          "name": "Chimera 24 Backpack"
+        },
+        {
+          "id": "3",
+          "img": "https://production-internal-ccdemo.demandware.net/on/demandware.static/-/Sites-nto-gear/default/dw2703594d/images/large/4060532BJK-0.jpg",
+          "name": "Jester Backpack"
+        },
+        {
+          "id": "4",
+          "img": "https://s3-us-west-2.amazonaws.com/nto-products/products1110/4010100.jpg",
+          "name": "Heckler Backpack"
+        },
+        {
+          "id": "5",
+          "img": "https://production-internal-ccdemo.demandware.net/on/demandware.static/-/Sites-nto-gear/default/dwb0a81d06/images/large/4060318A21-0.jpg",
+          "name": "City Slicker Backpack"
+        }
+      ]
+    }
+  ]
+}

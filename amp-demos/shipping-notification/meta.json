@@ -1,0 +1,11 @@
+{
+    "title": "Shipping notification",
+    "description": "After purchase of a product, the recipient email will render a message that reflects the real time delivery status: processing, packed, shipped, or delivered. If package is still in transit, an updated/estimated time of arrival will also be displayed.",
+    "componentsUsed": ["amp-list", "amp-mustache", "amp-form", "amp-carousel", "amp-anim", "amp-bind", "amp-timeago"],
+    "additionalFiles": [],
+    "thumbnail":{
+      "webp":"",
+      "jpg":"../img/shipping-notification.png",
+      "alt":""
+    }
+}

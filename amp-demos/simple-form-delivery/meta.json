@@ -1,0 +1,11 @@
+{
+    "title": "Simple Delivery",
+    "description": "Simple form which submits data to an endpoint and returns a message",
+    "componentsUsed": ["amp-mustache", "amp-form", "amp-selector", "amp-anim"],
+    "additionalFiles": [],
+    "thumbnail":{
+      "webp":"",
+      "jpg":"../img/form-delivery.png",
+      "alt":""
+    }
+}

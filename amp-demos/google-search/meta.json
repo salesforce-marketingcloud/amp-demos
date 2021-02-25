@@ -1,0 +1,11 @@
+{
+    "title": "External submit search",
+    "description": "Creates the illusion that form submissions have been converted from POST to GET in order to redirect to an external page.",
+    "componentsUsed": ["amp-bind"],
+    "additionalFiles": [],
+    "thumbnail":{
+      "webp":"",
+      "jpg":"../img/form-ext-submit-google.png",
+      "alt":""
+    }
+}
