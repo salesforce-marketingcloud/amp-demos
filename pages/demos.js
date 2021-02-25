@@ -10,12 +10,12 @@ function chooseImage(thumbnail){
 }
 
 export default function Demos() {
-  
+
   return (
     <div className={styles.container}>
       <Head>
         <title>AMP for Email demo templates</title>
-        <link rel="icon" href="/favicon.ico" />        
+        <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="AMP for Email demo templates"/>
       </Head>
 
@@ -26,11 +26,11 @@ export default function Demos() {
         <ul className="demos">
           {Object.entries(demos).map(([title, demo]) =>
             <li id={`${title}`}>
-              {demo.thumbnail.webp}
+
               <h2>{demo.title}</h2>
               <picture>
                 {chooseImage(demo.thumbnail)}
-                <source srcset={demo.thumbnail.jpg} type="image/jpg"/> 
+                <source srcset={demo.thumbnail.jpg} type="image/jpg"/>
                 <img src={demo.thumbnail.jpg} alt={`${demo.thumbnail.alt}`}/>
               </picture>
               <p>{demo.description}</p>
