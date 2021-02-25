@@ -5,18 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start -p $(node -e 'console.log(process.env.PORT || 3000)' )",
+    "heroku-deploy": "git push heroku master"
   },
   "dependencies": {
     "autoprefixer": "^10.2.4",
+    "extra-watch-webpack-plugin": "^1.0.3",
     "next": "10.0.6",
     "postcss": "^8.2.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "tailwindcss": "^2.0.3"
-  },
-  "devDependencies": {
-    "extra-watch-webpack-plugin": "^1.0.3",
+    "tailwindcss": "^2.0.3",
     "val-loader": "^2.1.2"
   }
 }
