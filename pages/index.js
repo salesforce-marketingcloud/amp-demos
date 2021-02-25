@@ -1,64 +1,67 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Demos.module.css'
+import demos from '../amp-demos/index.js'
 
-export default function Home() {
+function chooseImage(thumbnail){
+  if (thumbnail.webp){
+    return <source srcset={thumbnail.webp} type="image/webp" media="(prefers-reduced-motion: no-preference)"/>;
+  }
+  return null
+}
+
+export default function Demos() {
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>AMP for Email demo templates</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="AMP for Email demo templates"/>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main>
+        <h1>AMP for Email demos</h1>
+        <p>Here are some demos of AMP for Email.  Please use them, they are cool.</p>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <ul className="demos">
+          {Object.entries(demos).map(([title, demo]) =>
+            <li id={`${title}`}>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+              <h2>{demo.title}</h2>
+              <picture>
+                {chooseImage(demo.thumbnail)}
+                <source srcset={demo.thumbnail.jpg} type="image/jpg"/>
+                <img src={demo.thumbnail.jpg} alt={`${demo.thumbnail.alt}`}/>
+              </picture>
+              <p>{demo.description}</p>
+              <h3>Components used</h3>
+              <ul className="components">
+                {demo.componentsUsed.map((componentName) => {
+                  return <li key={componentName}>
+                    <a href={`https://amp.dev/documentation/examples/components/${componentName}/?format=email`}>{componentName}</a>
+                  </li>;
+                })}
+              </ul>
+              <h3>Links</h3>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+              <ul>
+                <li>
+                  <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`} target="_blank">AMP playground</a>
+                </li>
+                {demo.additionalFiles.map(({href, text}) => {
+                  return <li key={href}>
+                    <a href={`${href}`}>{text}</a>
+                  </li>;
+                })}
+                <li><a href={`#${title}`}>Link to this demo</a></li>
+              </ul>
+            </li>
+          )}
+        </ul>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+
       </footer>
     </div>
   )
