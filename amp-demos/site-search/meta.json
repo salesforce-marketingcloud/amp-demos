@@ -4,8 +4,8 @@
     "componentsUsed": ["amp-bind"],
     "additionalFiles": [],
     "thumbnail":{
-      "webp":"",
-      "jpg":"../img/form-ext-submit-google.png",
-      "alt":""
+      "webp":"../img/site-search.webp",
+      "jpg":"../img/site-search.jpg",
+      "alt":"Site search preview"
     }
 }
