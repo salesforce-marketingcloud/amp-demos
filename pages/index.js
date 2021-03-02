@@ -19,20 +19,27 @@ export default function Demos() {
         <meta name="description" content="AMP for Email demo templates"/>
       </Head>
 
+      <header>
+        <h2>AMP for Email Demos</h2>
+        <p>This is a collection of AMP for Email examples written for and tested in SFMC. They have been validated in the <a href="https://amp.gmail.dev/playground/">Gmail</a> and <a href="https://playground.amp.dev/">AMP</a> online playgrounds.</p>
+        <p>Most of the content is generated via <code>.json</code>, and hosted on SFMC as code resource. Some of these code resources may be generated dynamically using <a href="https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-programmatic-content.meta/mc-programmatic-content/ssjs_serverSideJavaScript.htm">Server-Side JavaScript</a> and utilize a third party API.</p>
+        <p>Visit <a href="https://github.com/salesforce-marketingcloud/amp-demos">github.com/salesforce-marketingcloud/amp-demos</a> to report any issues, or access the raw files for more detail.</p>
+        <p>⚡</p>
+      </header>
+
       <main>
-        <h1>AMP for Email demos</h1>
-        <p>Here are some demos of AMP for Email.  Please use them, they are cool.</p>
 
         <ul className="demos">
           {Object.entries(demos).map(([title, demo]) =>
             <li id={`${title}`}>
-
               <h2>{demo.title}</h2>
-              <picture>
-                {chooseImage(demo.thumbnail)}
-                <source srcset={demo.thumbnail.jpg} type="image/jpg"/>
-                <img src={demo.thumbnail.jpg} alt={`${demo.thumbnail.alt}`}/>
-              </picture>
+                <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`} target="_blank">
+                  <picture>
+                    {chooseImage(demo.thumbnail)}
+                    <source srcset={demo.thumbnail.jpg} type="image/jpg"/>
+                    <img src={demo.thumbnail.jpg} alt={`${demo.thumbnail.alt}`}/>
+                  </picture>
+                </a>
               <p>{demo.description}</p>
               <h3>Components used</h3>
               <ul className="components">
@@ -61,6 +68,14 @@ export default function Demos() {
       </main>
 
       <footer className={styles.footer}>
+
+        <h2><strong>External Resources</strong></h2>
+
+          <ul>
+            <li><a href="https://salesforce.quip.com/HEauAZ5Gzwa7">AMP for Email: Delivery Email Code Samples</a></li>
+            <li><a href="https://salesforce.quip.com/ab4eAaM5GL0C">CloudPage Code Resources and AMP for Email</a></li>
+            <li><a href="https://amp.dev/documentation/guides-and-tutorials/start/create_email/?format=email">Official AMP for Email docs</a></li>
+          </ul>
 
       </footer>
     </div>
