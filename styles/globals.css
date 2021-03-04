@@ -8,6 +8,9 @@ body{
   color:var(--text, #080707);
   margin: 1em 4vw;
 }
+header{
+  max-width:60em;
+}
 h1{
   font-size:3em;
 }
