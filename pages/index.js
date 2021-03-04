@@ -20,7 +20,7 @@ export default function Demos() {
       </Head>
 
       <header>
-        <h2>AMP for Email Demos</h2>
+        <h1>AMP for Email Demos</h1>
         <p>This is a collection of AMP for Email examples written for and tested in SFMC. They have been validated in the <a href="https://amp.gmail.dev/playground/">Gmail</a> and <a href="https://playground.amp.dev/">AMP</a> online playgrounds.</p>
         <p>Most of the content is generated via <code>.json</code>, and hosted on SFMC as code resource. Some of these code resources may be generated dynamically using <a href="https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-programmatic-content.meta/mc-programmatic-content/ssjs_serverSideJavaScript.htm">Server-Side JavaScript</a> and utilize a third party API.</p>
         <p>Visit <a href="https://github.com/salesforce-marketingcloud/amp-demos">github.com/salesforce-marketingcloud/amp-demos</a> to report any issues, or access the raw files for more detail.</p>
