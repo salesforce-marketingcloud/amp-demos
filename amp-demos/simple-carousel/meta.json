@@ -4,8 +4,8 @@
     "componentsUsed": ["amp-carousel"],
     "additionalFiles": [],
     "thumbnail":{
-      "webp":"",
-      "jpg":"../img/carousel.gif",
+      "webp":"../img/carousel.webp",
+      "jpg":"../img/carousel.jpg",
       "alt":""
     }
 }

@@ -4,8 +4,8 @@
     "componentsUsed": ["amp-list", "amp-form", "amp-mustache"],
     "additionalFiles": [],
     "thumbnail":{
-      "webp":"",
-      "jpg":"../img/advanced-review-v2.png",
+      "webp":"../img/advance-review.webp",
+      "jpg":"../img/advance-review.jpg",
       "alt":""
     }
 }
