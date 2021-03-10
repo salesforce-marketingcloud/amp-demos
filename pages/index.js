@@ -37,7 +37,7 @@ export default function Demos() {
                   <picture>
                     {chooseImage(demo.thumbnail)}
                     <source srcset={demo.thumbnail.jpg} type="image/jpg"/>
-                    <img src={demo.thumbnail.jpg} alt={`${demo.thumbnail.alt}`}/>
+                    <img src={demo.thumbnail.jpg} alt={`${demo.title} preview`}/>
                   </picture>
                 </a>
               <p>{demo.description}</p>
@@ -53,14 +53,16 @@ export default function Demos() {
 
               <ul>
                 <li>
-                  <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`} target="_blank">AMP playground</a>
+                  <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`} target="_blank">
+                    View live <span aria-label={`of ${demo.title}`}></span>demo in AMP playground
+                  </a>
                 </li>
                 {demo.additionalFiles.map(({href, text}) => {
                   return <li key={href}>
                     <a href={`${href}`}>{text}</a>
                   </li>;
                 })}
-                <li><a href={`#${title}`}>Link to this demo</a></li>
+                <li><a href={`#${title}`}>Link to this <span aria-label={`of ${demo.title}`}></span>demo</a></li>
               </ul>
             </li>
           )}

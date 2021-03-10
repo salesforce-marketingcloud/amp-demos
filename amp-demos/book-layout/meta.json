@@ -1,6 +1,6 @@
 {
     "title": "Book Layout",
-    "description": "A similar concept to a carousel or tabbed layout content is spread across pages of a book/catalog.\n\nThis example is about combining AMP with more advanced 3D CSS to give an enhanced visual experience, while also considering accessibility.\n\nWe use amp-bind to set and change the current page number.  Based on the current page we can add/remove a class. This class uses CSS transform to turn the page over and by using CSS transition we can see that page turn happen smoothly.\n\nThis demo shows a number of ways of using AMP to change the page, this can be done by typing in a number input, by sliding a range input, by clicking next page and previous page buttons and by clicking directly on a page number.",
+    "description": "A similar concept to a carousel or tabbed layout content is spread across pages of a book/catalog.\n\nThis example is about combining AMP with more advanced 3D CSS to give an enhanced visual experience, while also considering accessibility.\n\nWe use amp-bind to set and change the current page number.  Based on the current page we can add/remove a class. This class uses CSS transform to turn the page over and by using CSS transition we can see that page turn happen smoothly.\n\nThis demo shows a number of ways of using AMP to change the page, this can be done by typing in a number input, by sliding a range input, by clicking next page and previous page buttons.",
     "componentsUsed": ["amp-bind"],
     "additionalFiles": [],
     "thumbnail":{
