@@ -10,21 +10,18 @@ const demoEntries = Object.entries(demos);
 
 function chooseImage(thumbnail) {
   if (thumbnail.webp) {
-    return <source srcset={thumbnail.webp} type="image/webp" media="(prefers-reduced-motion: no-preference)" />;
+    return <source srcSet={thumbnail.webp} type="image/webp" media="(prefers-reduced-motion: no-preference)" />;
   }
   return null
 }
 
 function getFilteredComponentsFromQuery(query) {
   if(!query.components) {
-    console.log({getFilteredComponentsFromQuery: []});
     return [];
   }
   if(Array.isArray(query.components)) {
-    console.log({getFilteredComponentsFromQuery: query.components});
     return query.components;
   } else {
-    console.log({getFilteredComponentsFromQuery: [query.components]});
     return [query.components];
   }
 }
@@ -79,12 +76,12 @@ export default function Demos() {
         
         <ul className="demos">
           {filteredDemos.map(([dirKey, demo]) =>
-            <li id={`${dirKey}`}>
+            <li id={`${dirKey}`} key={`${dirKey}`}>
               <h2>{demo.title}</h2>
               <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`} target="_blank">
                 <picture>
                   {chooseImage(demo.thumbnail)}
-                  <source srcset={demo.thumbnail.jpg} type="image/jpg" />
+                  <source srcSet={demo.thumbnail.jpg} type="image/jpg" />
                   <img src={demo.thumbnail.jpg} alt={`${demo.title} preview`} />
                 </picture>
               </a>
