@@ -3,7 +3,7 @@ import demos from '../amp-demos/index.js'
 
 function chooseImage(thumbnail){
   if (thumbnail.webp){
-    return <source srcset={thumbnail.webp} type="image/webp" media="(prefers-reduced-motion: no-preference)"/>;
+    return <source srcSet={thumbnail.webp} type="image/webp" media="(prefers-reduced-motion: no-preference)"/>;
   }
   return null
 }
@@ -35,7 +35,7 @@ export default function Demos() {
                 <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`} target="_blank">
                   <picture>
                     {chooseImage(demo.thumbnail)}
-                    <source srcset={demo.thumbnail.jpg} type="image/jpg"/>
+                    <source srcSet={demo.thumbnail.jpg} type="image/jpg"/>
                     <img src={demo.thumbnail.jpg} alt={`${demo.title} preview`}/>
                   </picture>
                 </a>
