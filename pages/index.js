@@ -30,7 +30,7 @@ export default function Demos() {
 
         <ul className="demos">
           {Object.entries(demos).map(([title, demo]) =>
-            <li id={`${title}`}>
+            <li id={`${title}`} key={`${title}`}>
               <h2>{demo.title}</h2>
                 <a href={`https://playground.amp.dev/?runtime=amp4email#share=${Buffer.from(demo.html).toString('base64')}`} target="_blank">
                   <picture>
