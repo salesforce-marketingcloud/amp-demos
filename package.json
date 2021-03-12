@@ -11,7 +11,7 @@
     "heroku-deploy": "git push heroku master"
   },
   "dependencies": {
-    "autoprefixer": "^10.2.4",
+    "autoprefixer": "^10.2.5",
     "extra-watch-webpack-plugin": "^1.0.3",
     "next": "10.0.6",
     "postcss": "^8.2.6",
