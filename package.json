@@ -2,6 +2,8 @@
   "name": "amp-demo-test",
   "version": "0.1.0",
   "private": true,
+  "author": "salesforce.com",
+  "license": "CC0-1.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
