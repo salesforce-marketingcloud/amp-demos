@@ -1,0 +1,11 @@
+{
+    "title": "Promo Reveal - Flip",
+    "description": "A hidden offer that the users needs to interact with to reveal.\n\nClick the card and it will flip over to show the discount code.",
+    "componentsUsed": ["amp-bind"],
+    "additionalFiles": [],
+    "thumbnail":{
+      "webp":"../img/NTO-reveal-flip.webp",
+      "jpg":"../img/NTO-reveal-flip.jpg",
+      "alt":""
+    }
+}
