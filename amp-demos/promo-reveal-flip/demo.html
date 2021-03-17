@@ -1,0 +1,103 @@
+<!-- {{={< >}=}} -->
+<!doctype html>
+<html amp4email lang="en" data-css-strict>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    body{font-family:arial}
+    .wrapper {
+      max-width: 38.5em;
+      margin: 0 auto;
+      font-family: arial, sans-serif;
+      font-size: 1rem;
+      background:#fff;
+      color:#393939;
+      text-align:center;
+    }
+    .header {
+      padding: 3em 1.25em 2em;
+      text-align:center;
+    }
+    button{
+      border:none;
+      border-radius:.25em;
+      font-size:inherit;
+      padding:.5em 1em;
+      margin:.5em ;
+      color: #fff;
+      background-color: #215ca0;
+    }
+    .promo p{font-size:2em}
+    .promo-wrap{
+      transform-style: preserve-3d;
+      perspective:100em;
+      padding:2em;
+      max-width:30em;
+      margin:0 auto;
+    }
+    .promo{
+      display:table;
+      margin:0 auto;
+      width:200%;
+      transform:rotateY(0deg)translateZ(.1em)translateX(-25%);
+      transition:transform 1s;
+      transform-origin:center;
+      transform-style: preserve-3d;
+    }
+    .promo .front, 
+    .promo .back{
+      display:table-cell;
+      vertical-align:middle;
+      width:50%;
+      background:#fff;
+      border:.5em solid rgba(0,0,0,0.5);
+      border-radius:2em;
+      text-align:center;
+      padding:1em;
+    }
+    .promo .front{
+      transform:translateX(50%) translateZ(.1em) ;
+      background:#0a0;
+      color:#fff;
+    }
+    .promo .back{
+      transform:rotateY(180deg) translateX(50%);
+      background:#EDFAFD;
+      color:#097FB3;
+      border-color:#097FB3;
+    }
+    .promo:hover{
+      transform:rotateY(10deg)translateZ(.1em)translateX(-25%);
+    }
+    .promo.reveal{ 
+      transform:rotateY(-180deg)translateZ(-.1em)translateX(25%);
+    }
+  </style>
+</head>
+<body>  
+  <article class="wrapper" aria-label="NTO, promo reveal AMP demo" lang="en">
+    <div class="header">
+      <amp-img src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" height="3.8em" width="9.4em" alt="Northern Trail Outfitters"></amp-img>
+    </div>
+  <section aria-label="Promo reveal" aria-live="polite">
+	<div class="promo-wrap">
+      <div class="promo" [class]="(reveal == true ? 'promo reveal' : 'promo')">
+        <div class="front">
+            <p>Would you like a discount?</p>
+            <br>
+            <button on="tap:AMP.setState({reveal: true})">Reveal</button>
+        </div>
+        <div class="back">
+          <p>Here's 20% off! <br>Code:<b> AMP20</b></p>
+        </div>
+      </div>
+    </div>
+    <button on="tap:AMP.setState({reveal: true})">Reveal</button>  
+    <button on="tap:AMP.setState({reveal: false})">Reset</button>
+  </section>
+  </article>
+</body>
+</html>

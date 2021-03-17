@@ -1,0 +1,11 @@
+{
+  "title": "Promo Reveal - Scratch",
+  "description": "A hidden offer that the users needs to interact with to reveal.\n\nHover over the card to scratch off with the mouse or click to trigger scratch off animation and show the discount code.",
+  "componentsUsed": ["amp-bind"],
+  "additionalFiles": [],
+  "thumbnail":{
+    "webp":"../img/NTO-reveal-scratch.webp",
+    "jpg":"../img/NTO-reveal-scratch.jpg",
+    "alt":""
+  }
+}

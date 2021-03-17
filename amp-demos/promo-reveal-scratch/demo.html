@@ -1,0 +1,129 @@
+<!-- {{={< >}=}} -->
+<!doctype html>
+<html amp4email lang="en" data-css-strict>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    body{font-family:arial}
+    .wrapper {
+      max-width: 38.5em;
+      margin: 0 auto;
+      font-family: arial, sans-serif;
+      font-size: 1rem;
+      background:#fff;
+      color:#393939;
+      text-align:center;
+    }
+    .header {
+      padding: 3em 1.25em 2em;
+      text-align:center;
+    }
+    button{
+      border:none;
+      border-radius:.25em;
+      font-size:inherit;
+      padding:.5em 1em;
+      margin:.5em ;
+      color: #fff;
+      background-color: #215ca0;
+    }
+    .promo p{font-size:2em}
+    .promo-wrap{
+      transform-style: preserve-3d;
+      perspective:100em;
+      padding:2em;
+      max-width:30em;
+      margin:0 auto;
+    }
+    .promo{
+      margin:0 auto;
+      position:relative;
+      transform-style: preserve-3d;
+    }
+    .promo .scratch{
+      position:absolute;
+      top:0;right:0;bottom:0;left:0;
+      display:flex;
+      flex-wrap:wrap;
+      overflow:hidden;
+      cursor: pointer;
+    }
+    
+    .promo .scratch u{
+      transform:translateZ(1em) scale(1.2);
+      display:block;
+      width:10%;
+      height:10%;
+      background:#3ef;
+      transition:transform 0s;
+      transition-delay:9999s;
+      opacity:0.99;
+      filter:blur(1em) contrast(15);
+    }
+
+    /* Animation */
+    .promo.reveal .scratch u:nth-of-type(1n){transition-delay:2.25s}
+    .promo.reveal .scratch u:nth-of-type(11n -11){transition-delay:0s}
+    .promo.reveal .scratch u:nth-of-type(11n -8){transition-delay:.25s}
+    .promo.reveal .scratch u:nth-of-type(11n -10){transition-delay:.5s}
+    .promo.reveal .scratch u:nth-of-type(11n -9){transition-delay:.75s}
+    .promo.reveal .scratch u:nth-of-type(11n -12){transition-delay:1s}
+    .promo.reveal .scratch u:nth-of-type(11n -7){transition-delay:1.25s}
+    .promo.reveal .scratch u:nth-of-type(11n -13){transition-delay:1.5s}
+    .promo.reveal .scratch u:nth-of-type(11n -6){transition-delay:1.75s}
+    .promo.reveal .scratch u:nth-of-type(11n -14){transition-delay:2s}
+    
+    
+    /* Reveal code */
+    .promo .scratch u:hover,
+    .promo.reveal .scratch u{
+      transform:scale(0);
+      transition-delay:0s;
+    }
+    .promo .offer{
+      transform:translateZ(.1em);
+      background:#EDFAFD;
+      color:#097FB3;
+      text-align:center;
+      padding:1em;
+      border:.1em solid #097FB3;
+    } 
+
+  </style>
+</head>
+<body>
+  <article class="wrapper" aria-label="NTO, promo reveal AMP demo" lang="en">
+    <div class="header">
+      <amp-img src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" height="3.8em" width="9.4em" alt="Northern Trail Outfitters"></amp-img>
+    </div>
+  <section aria-label="Promo reveal" aria-live="polite">
+    <h1>
+      Hover to scratch off or click reveal to see offer.
+    </h1>
+	<div class="promo-wrap">
+      <div class="promo" [class]="(reveal == true ? 'promo reveal' : 'promo')">
+        <div class="scratch">
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+          <u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u><u></u>
+        </div>
+        <div class="offer">
+          <p>Get 20% off! <br>Code:<b> AMP20</b></p>
+        </div>
+      </div>
+    </div>
+    <button on="tap:AMP.setState({reveal: true})">Scratch</button>  
+  </section>
+  </article>
+</body>
+</html>
