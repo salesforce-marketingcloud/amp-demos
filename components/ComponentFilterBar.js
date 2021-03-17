@@ -44,8 +44,8 @@ export default function ComponentFilterBar({ filteredComponents, router }) {
         return filteredComponents.indexOf(componentName) !== -1;
     }
   
-    return <div>
-        <p>{allAmpComponents.map(componentName => <button key={componentName} className={isFilterActive(componentName) ? styles.active : null} onClick={toggleFilter.bind(this, componentName)}>{componentName}</button>)}</p>
+    return <div class="filters">
+        <span>{allAmpComponents.map(componentName => <button key={componentName} className={isFilterActive(componentName) ? styles.active : null} onClick={toggleFilter.bind(this, componentName)}>{componentName}</button>)}</span>
         <button onClick={clearFilters}>Clear Filters</button>
       </div>;
   }
