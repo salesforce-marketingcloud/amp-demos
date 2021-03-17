@@ -17,6 +17,22 @@ h1{
 a{
   color:var(--links, #0b5cab);
 }
+.filters{
+  margin-bottom:2em
+}
+.filters button{
+  font:inherit;
+  color:inherit;
+  padding:.5em 1em;
+  margin:.25em;
+  border-radius: .25em;
+  border:.1em solid var(--border,#dddbda);
+  background:var(--buttonBack, #fff);
+}
+.filters button.active{
+  background:var(--buttonActive, #0070d2);
+  color:var(--buttonActiveColor, #fff);
+}
 ul.demos{
   list-style:none;
   margin:0;
@@ -85,5 +101,7 @@ ul.demos li:target {
     --links:#009EDB;
     --border:#858585;
     --shadow:rgba(255,255,255,.2);
+    --buttonActive: #009EDB;
+    --buttonBack: #4e4e4e;
   }
 }
