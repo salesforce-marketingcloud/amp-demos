@@ -17,6 +17,9 @@ h1{
 a{
   color:var(--links, #0b5cab);
 }
+.filters{
+  margin-bottom:2em
+}
 .filters button{
   font:inherit;
   color:inherit;
