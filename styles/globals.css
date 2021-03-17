@@ -29,7 +29,7 @@ a{
   border:.1em solid var(--border,#dddbda);
   background:var(--buttonBack, #fff);
 }
-.filters button[class*="active"]{
+.filters button.active{
   background:var(--buttonActive, #0070d2);
   color:var(--buttonActiveColor, #fff);
 }

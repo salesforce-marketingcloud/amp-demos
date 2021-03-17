@@ -1,4 +1,3 @@
-import styles from '../styles/ComponentFilterList.module.css';
 import demos from '../amp-demos/index.js';
 
 const allAmpComponents = [];
@@ -44,8 +43,8 @@ export default function ComponentFilterBar({ filteredComponents, router }) {
         return filteredComponents.indexOf(componentName) !== -1;
     }
   
-    return <div class="filters">
-        <span>{allAmpComponents.map(componentName => <button key={componentName} className={isFilterActive(componentName) ? styles.active : null} onClick={toggleFilter.bind(this, componentName)}>{componentName}</button>)}</span>
+    return <div className='filters'>
+        <span>{allAmpComponents.map(componentName => <button key={componentName} className={isFilterActive(componentName) ? 'active' : null} onClick={toggleFilter.bind(this, componentName)}>{componentName}</button>)}</span>
         <button onClick={clearFilters}>Clear Filters</button>
       </div>;
   }
