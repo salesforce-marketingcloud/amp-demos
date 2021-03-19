@@ -56,7 +56,7 @@ export default function Demos() {
   }, [filteredComponents])
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>AMP for Email demo templates</title>
         <link rel="icon" href="/favicon.ico" />
@@ -114,7 +114,7 @@ export default function Demos() {
         </ul>
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
 
         <h2><strong>External Resources</strong></h2>
 
