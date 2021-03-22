@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import demos from '../amp-demos/index.js';
 import ComponentFilterBar from '../components/ComponentFilterBar';
-import styles from '../styles/Demos.module.css';
+
 
 const demoEntries = Object.entries(demos);
 
