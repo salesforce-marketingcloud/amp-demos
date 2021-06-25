@@ -16,3 +16,8 @@ Here is a detailed list of the amp4email sample files which may be found in the 
 - [AMP for Email: Delivery Email Code Samples](https://salesforce.quip.com/HEauAZ5Gzwa7)
 - [CloudPage Code Resources and AMP for Email](https://salesforce.quip.com/ab4eAaM5GL0C)
 - [Official AMP for Email docs](https://amp.dev/documentation/guides-and-tutorials/start/create_email/?format=email)
+
+## Trailhead Live Series
+- [Getting Started with AMP for Email](https://trailhead.salesforce.com/live/videos/a2r3k000001vD1P/getting-started-with-amp-for-email-code-part-1/)
+- [Building Advanced Interactions in AMP for Email](https://trailhead.salesforce.com/live/videos/a2r3k000001vD6K/building-advanced-interactions-in-amp-for-emails/)
+- [Sending and Receiving Data with AMP for Email](https://trailhead.salesforce.com/live/videos/a2r3k000001vD6A/episode-3-sending-and-receiving-data-with-amp-for-email/)

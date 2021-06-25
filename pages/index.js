@@ -73,7 +73,7 @@ export default function Demos() {
       </header>
 
       <main>
-        
+
         <ul className="demos">
           {filteredDemos.map(([dirKey, demo]) =>
             <li id={`${dirKey}`} key={`${dirKey}`}>
@@ -122,6 +122,14 @@ export default function Demos() {
             <li><a href="https://salesforce.quip.com/HEauAZ5Gzwa7">AMP for Email: Delivery Email Code Samples</a></li>
             <li><a href="https://salesforce.quip.com/ab4eAaM5GL0C">CloudPage Code Resources and AMP for Email</a></li>
             <li><a href="https://amp.dev/documentation/guides-and-tutorials/start/create_email/?format=email">Official AMP for Email docs</a></li>
+          </ul>
+
+        <h2><strong>Trailhead Live Series</strong></h2>
+
+          <ul>
+            <li><a href="https://trailhead.salesforce.com/live/videos/a2r3k000001vD1P/getting-started-with-amp-for-email-code-part-1/">Getting Started with AMP for Email</a></li>
+            <li><a href="https://trailhead.salesforce.com/live/videos/a2r3k000001vD6K/building-advanced-interactions-in-amp-for-emails/">Building Advanced Interactions in AMP for Email</a></li>
+            <li><a href="https://trailhead.salesforce.com/live/videos/a2r3k000001vD6A/episode-3-sending-and-receiving-data-with-amp-for-email/">Sending and Receiving Data with AMP for Email</a></li>
           </ul>
 
       </footer>
