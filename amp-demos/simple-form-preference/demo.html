@@ -9,7 +9,7 @@
   <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
   <style amp4email-boilerplate>body{visibility:hidden}</style>
   <style amp-custom>
- .wrapper {
+    .wrapper {
       max-width: 38.5em;
       margin: 0 auto;
       font-family: arial, sans-serif;
@@ -74,7 +74,7 @@
       text-align:center;
       font-size:1.1em;
     }
-   	hr{
+    hr{
       border:none;
       border-bottom:.1em solid #e5e5e5;
     }
@@ -105,15 +105,17 @@
       justify-content: space-around;
     }
     .select amp-img{
-    	display:block;;
+      display:block;;
     }
     .select [option]{
       border:.1em solid #E5E5E5;
       padding:.5em;
 
     }
-    .select.select [option][selected]{
+    .select.select [option][selected]:not(:focus){
       outline:none;
+    }
+    .select.select [option][selected]{
       background:#097FB3;
       color:#fff;
 
@@ -136,14 +138,13 @@
   </style>
 </head>
 <body>
-  <article class="wrapper" aria-label="" lang="en">
+  <article class="wrapper" aria-label="AMP profile demo" lang="en">
     <div class="header">
       <amp-img src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" height="3.8em" width="9.4em" alt="Northern Trail Outfitters"></amp-img>
     </div>
     <div class="main">
       <h1>Lets us know more about yourself</h1>
       <form method="post" action-xhr="https://pub.s8.exacttarget.com/nm5opsu2l5w">
-
         <div class="form-content">
           <div>
             <label class="ic-amp-label" for="name">Name:</label>
@@ -170,10 +171,10 @@
             </div>
           </amp-selector>
 
-	        <input type="submit" value="Submit" class="submit-btn">
+          <input type="submit" value="Submit" class="submit-btn">
         </div>
         <div submitting>
-        	<amp-anim src="https://thumbs.gfycat.com/RelievedSilentArcticwolf-small.gif" height="50" width="50" alt=""></amp-anim>
+          <amp-anim src="https://thumbs.gfycat.com/RelievedSilentArcticwolf-small.gif" height="50" width="50" alt=""></amp-anim>
         </div>
 
 
@@ -195,32 +196,32 @@
     <div class="footer">
       <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-logo-secondary-footer.png" height="3.25em" width="3.25em" alt=""></amp-img>
       <p> To view this email as a web page, click
-          <!--
-          <a class="link" href="%%view_email_url%%">here.</a>
-          --><a class="link">here.</a>
+        <!--
+        <a class="link" href="%%view_email_url%%">here.</a>
+        --><a class="link">here.</a>
       </p>
       <p>
-                  <span style="font-weight:bold;">%%Member_Busname%%</span>
-                  <br>
-                  <br>%%Member_Addr%%
-                  <br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%
-                  <br>
+        <span style="font-weight:bold;">%%Member_Busname%%</span>
+        <br>
+        <br>%%Member_Addr%%
+        <br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%
+        <br>
       </p>
       <div class="social">
-        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
-        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
-        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
-        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
-        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" alt="facebook" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" alt="instagram" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" alt="twitter" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" alt="pinterest" width="1.8em" height="1.8em"></amp-img>
+        <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" alt="NTO app" width="1.8em" height="1.8em"></amp-img>
       </div>
       <div class="footer-nav">
         <a href="https://northerntrailoutfitters.com/default/contact.html">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <a href="https://northerntrailoutfitters.com/default/stores?showMap=true&amp;horizontalView=true">Store Locator</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <a href="https://northerntrailoutfitters.com/default/privacypolicy.html">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <!--
-        <a href="%%profile_center_url%%">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="%%unsub_center_url%%">Unsubscribe</a>
-        -->
+      <a href="%%profile_center_url%%">Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="%%unsub_center_url%%">Unsubscribe</a>
+      -->
         <a >Manage Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <a >Unsubscribe</a>
       </div>
@@ -228,3 +229,4 @@
   </article>
 </body>
 </html>
+

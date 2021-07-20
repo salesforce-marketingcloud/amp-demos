@@ -314,7 +314,13 @@ legend, .ic-amp-legend {
     grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
   }
 }
-
+  .sr-only:not(:focus):not(:active) {
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }
 </style>
 </head>
 <body>
@@ -338,7 +344,7 @@ legend, .ic-amp-legend {
 
 <div class="ic-amp-header">
   <amp-img layout="responsive" src="https://image.s4.sfmc-content.com/lib/fe9815747266017d71/m/1/d97c4aa9-93e8-41ee-b018-d410625ed680.png" width="66" height="123" alt=""></amp-img>
-  <h2>Buy online, pick up today!</h2>
+  <h1>Buy online, pick up today!</h1>
   <p>Find a NTO store near you and get the gear you need for your next adventure.</p>
 </div>
 
@@ -422,7 +428,7 @@ legend, .ic-amp-legend {
               <div class="phone">📞{{phone}}</div>
             </div>
             <div class="ic-amp-results-shop">
-              <a href="https://www.northerntrailoutfitters.com/" class="btn-shop-results">Shop Now</a>
+              <a href="https://www.northerntrailoutfitters.com/" class="btn-shop-results">Shop <span class="sr-only">{{name}}</span> Now</a>
             </div>
           </div>
         {{/items}}
@@ -455,11 +461,11 @@ legend, .ic-amp-legend {
     <p><span style="font-weight:bold;">%%Member_Busname%%</span><br><br>%%Member_Addr%%<br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%<br></p>
 
     <div class="social">
-      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
-      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
-      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
-      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
-      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" alt="facebook" width="1.8em" height="1.8em"></amp-img>
+      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" alt="instagram" width="1.8em" height="1.8em"></amp-img>
+      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" alt="twitter" width="1.8em" height="1.8em"></amp-img>
+      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" alt="pinterest" width="1.8em" height="1.8em"></amp-img>
+      <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" alt="NTO app" width="1.8em" height="1.8em"></amp-img>
     </div>
 
     <div class="footer-nav">
