@@ -85,12 +85,12 @@
   <section aria-label="Promo reveal" aria-live="polite">
 	<div class="promo-wrap">
       <div class="promo" [class]="(reveal == true ? 'promo reveal' : 'promo')">
-        <div class="front">
+        <div class="front" [aria-hidden]="(reveal == true ? true : false)">
             <p>Would you like a discount?</p>
             <br>
             <button on="tap:AMP.setState({reveal: true})">Reveal</button>
         </div>
-        <div class="back">
+        <div class="back" aria-hidden="true" [aria-hidden]="(reveal == true ? false : true)">
           <p>Here's 20% off! <br>Code:<b> AMP20</b></p>
         </div>
       </div>

@@ -116,7 +116,7 @@ export default function Demos() {
 
       <footer>
 
-        <h2><strong>External Resources</strong></h2>
+        <h2 id="ExternalResources"><strong>External Resources</strong></h2>
 
           <ul>
             <li><a href="https://salesforce.quip.com/HEauAZ5Gzwa7">AMP for Email: Delivery Email Code Samples</a></li>
@@ -124,7 +124,7 @@ export default function Demos() {
             <li><a href="https://amp.dev/documentation/guides-and-tutorials/start/create_email/?format=email">Official AMP for Email docs</a></li>
           </ul>
 
-        <h2><strong>Trailhead Live Series</strong></h2>
+        <h2 id="TrailheadLiveSeries"><strong>Trailhead Live Series</strong></h2>
 
           <ul>
             <li><a href="https://trailhead.salesforce.com/live/videos/a2r3k000001vD1P/getting-started-with-amp-for-email-code-part-1/">Getting Started with AMP for Email</a></li>
