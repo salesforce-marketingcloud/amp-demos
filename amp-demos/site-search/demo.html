@@ -2,92 +2,92 @@
 <!doctype html>
 <html amp4email data-css-strict lang="en">
 <head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-  <script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <style amp-custom>
-    body{
-      text-align:center;
-    }
-    amp-img{
-      margin:2em 1em 1em;
-    }
-	input{
-      padding: 0 1em;
-      color: rgba(0,0,0,.87);
-      word-wrap: break-word;
-      outline: none;
-      flex: 100%;
-      margin-top: -37px;
-      font-size: 16px;
-      background: #fff;
-      display: flex;
-      border: 1px solid #dfe1e5;
-      border-radius: 24px;
-      height: 44px;
-      margin: 0 auto;
-      max-width: 482px;
-      width:80%;
-    }
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async></script>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+<style amp-custom>
+  body{
+    text-align:center;
+  }
+  amp-img{
+    margin:2em 1em 1em;
+  }
+input{
+    padding: 0 1em;
+    color: rgba(0,0,0,.87);
+    word-wrap: break-word;
+    outline: none;
+    flex: 100%;
+    margin-top: -37px;
+    font-size: 16px;
+    background: #fff;
+    display: flex;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    height: 44px;
+    margin: 0 auto;
+    max-width: 482px;
+    width:80%;
+  }
 
-    .submit-btn{
-      display:inline-block;
-      text-decoration:none;
-      color: #fff;
-      background-color: #097fb3;
-      text-transform:uppercase;
-      border:none;
-      padding: .8em 2em;
-      font-size: 1em;
-      margin: 0 auto;
-      border-radius:1.5em;
-      font-family: arial,sans-serif;
-      margin: 2em auto;
-    }
-    .user-valid .submit-btn.faux,
-    .user-invalid .submit-btn.faux{display:none;}
-    span.submit:hover{opacity:0}
+  .submit-btn{
+    display:inline-block;
+    text-decoration:none;
+    color: #fff;
+    background-color: #097fb3;
+    text-transform:uppercase;
+    border:none;
+    padding: .8em 2em;
+    font-size: 1em;
+    margin: 0 auto;
+    border-radius:1.5em;
+    font-family: arial,sans-serif;
+    margin: 2em auto;
+  }
+  .user-valid .submit-btn.faux,
+  .user-invalid .submit-btn.faux{display:none;}
+  span.submit:hover{opacity:0}
 
 
-  </style>
+</style>
 </head>
 <body>
-<form method="post" id="myform"
+  <form method="post" id="myform"
   action-xhr="https://pub.s8.exacttarget.com/kmi13fm5jp2?url=https%3A%2F%2Fwww.northerntrailoutfitters.com%2Fdefault%2fsearch">
-	<!-- Landing page URL is passed in the action-xhr -->
+  <!-- Landing page URL is passed in the action-xhr -->
 
-<!-- There are inconsistancies in the way POST submits are enocded.
-Because of this, this form may not work outside of Gmail until I put a work around in the backend processing of the code.
-https://github.com/ampproject/amphtml/issues/31612#issuecomment-786654298 -->
-  
-      <amp-img src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" height="3.8em" width="9.4em" alt="Northern Trail Outfitters"></amp-img>
+  <!-- There are inconsistancies in the way POST submits are enocded.
+  Because of this, this form may not work outside of Gmail until I put a work around in the backend processing of the code.
+  https://github.com/ampproject/amphtml/issues/31612#issuecomment-786654298 -->
+  	<amp-img src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png" height="3.8em" width="9.4em" alt="Northern Trail Outfitters"></amp-img>
 
-  <div>
-    <input type="text"
-      placeholder="Search Query"
-      required
-      name="q"
-      on="input-debounced:myform.submit">
-  </div>
-  <a class="submit-btn faux" href="https://www.northerntrailoutfitters.com">Search NTO</a>
-  <div submit-success>
-    <template type="amp-mustache">
-      <a class="submit-btn" href="{{get}}">Search NTO</a>
-      <p><small>{{get}}</small></p>
-    </template>
-  </div>
-  <div submitting>
-      <span class="submit-btn">Search NTO</span>
-  </div>
-  <div submit-error>
-    <template type="amp-mustache">
-      Error! <br>
-    </template>
-  </div>
+  	<div>
+    	<input type="search"
+        placeholder="Search Query"
+        aria-label="Enter search Query"
+        required
+        name="q"
+        on="input-debounced:myform.submit">
+  	</div>
+    <a class="submit-btn faux" href="https://www.northerntrailoutfitters.com">Search NTO</a>
+    <div submit-success>
+      <template type="amp-mustache">
+        <a class="submit-btn" href="{{get}}">Search NTO</a>
+        <p><small>{{get}}</small></p>
+      </template>
+    </div>
+    <div submitting>
+        <span class="submit-btn">Search NTO</span>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Error! <br>
+      </template>
+    </div>
 
-</form>
+  </form>
 </body>
 </html>

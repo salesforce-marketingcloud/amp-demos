@@ -139,6 +139,13 @@
       border-color: #540505;
       background: #e176761a;
     }
+    .sr-only:not(:focus):not(:active) {
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap; 
+      width: 1px;
+    }
 </style>
 </head>
 <body>
@@ -164,13 +171,13 @@
     </div>
 
       <h2 class="prod-name">{{name}}</h2>
-        <label>LIKE
+        <label>LIKE <span class="sr-only">{{name}}</span>
           <input type="radio" name="product-{{id}}" value="LIKE_VALUE"
             on="change:
             product-{{id}}.submit,
             AMP.setState({ myClass{{id}}: 'complete', myChoice{{id}}: 'like', myText{{id}}: '✓' })">
         </label>
-        <label>DISLIKE
+        <label>DISLIKE <span class="sr-only">{{name}}</span>
           <input type="radio" name="product-{{id}}" value="DISLIKE_VALUE"
             on="change:
             product-{{id}}.submit,
@@ -190,7 +197,7 @@
     <ul class="in-email-review">
     {{#prod_items}}
       <li [class]="myChoice{{id}}">
-        <span [text]="myText{{id}}"></span>{{name}}
+        <span [text]="myText{{id}}"></span><span class="sr-only" [text]="myChoice{{id}}"></span> {{name}}
       </li>
     {{/prod_items}}
     </ul>
@@ -204,11 +211,11 @@
   <p><span style="font-weight:bold;">%%Member_Busname%%</span><br><br>%%Member_Addr%%<br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%<br></p>
 
   <div class="social">
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" alt="facebook" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" alt="instagram" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" alt="twitter" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" alt="pinterest" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" alt="NTO app" width="1.8em" height="1.8em"></amp-img>
   </div>
 
   <div class="footer-nav">

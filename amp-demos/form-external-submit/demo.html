@@ -65,6 +65,7 @@
       height: 150px;
     }
     .submit {
+      font:inherit;
       display: inline-block;
       box-sizing: border-box;
       min-width: 10em;
@@ -104,7 +105,14 @@
       display: block;
     }
     .input {
-      display: none;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      position: absolute;
+      opacity:0;
+    }
+    .rating-default:not(:checked){
+      display:none;
     }
     .ratings {
       display: inline-block;
@@ -116,34 +124,48 @@
     .rating-default:checked ~* label {
       color: #ccc;
     }
+  	.rating-default:focus + .ratings label:first-of-type,
+    .input:focus + label,
     .ratings:hover label {
       color: #6dccee;
-    }
+    }				
     .ratings label:hover ~* {
       color: #ccc;
     }
     .ratings input:checked +* ~* {
       color: #ccc;
     }
-
+    .sr-only:not(:focus):not(:active) {
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap; 
+      width: 1px;
+    }
 </style>
 </head>
-<body>
+  <body>
 
 <article class="wrapper" aria-label="placeholder aria label" lang="en">
 
   <div class="header">
     <amp-img layout="responsive" src="https://s3-us-west-2.amazonaws.com/rd-industry-emails/retail/nto/brand-assets/email-templates/branding-nto-secondary-logo-horizontal-blue-2x.png"  width="348" height="142" alt="Northern Trail Outfitters"></amp-img>
-    <h2>What do you think of your <span>Sport Pulse Wireless Earbuds</span>?</h2>
+    <h1>What do you think of your <span>Sport Pulse Wireless Earbuds</span>?</h1>
   </div>
 
 
-  <amp-img layout="responsive" src="https://s3-us-west-2.amazonaws.com/nto-products/products1110/502300.jpg"  width="111" height="111" alt="Northern Trail Outfitters"></amp-img>
+  <amp-img layout="responsive" src="https://s3-us-west-2.amazonaws.com/nto-products/products1110/502300.jpg"  width="111" height="111" alt="Sport Pulse Wireless Earbuds"></amp-img>
 
   <form action-xhr="https://pub.s8.exacttarget.com/jsoxcpphn5y" method="get" id="ic-form">
 
     <input type="radio" name="rating" class="rating-default input" value="" checked>
-    <div class="ratings"><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="1" id="rating-1"><label for="rating-1">★</label><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="2" id="rating-2"><label for="rating-2">★</label><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="3" id="rating-3"><label for="rating-3">★</label><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="4" id="rating-4"><label for="rating-4">★</label><input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="5" id="rating-5"><label for="rating-5">★</label></div>
+    <div class="ratings">
+      <input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="1" id="rating-1"><label for="rating-1">★<span class="sr-only">1 star of 5</span></label>
+      <input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="2" id="rating-2"><label for="rating-2">★<span class="sr-only">2 star of 5</span></label>
+      <input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="3" id="rating-3"><label for="rating-3">★<span class="sr-only">3 star of 5</span></label>
+      <input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="4" id="rating-4"><label for="rating-4">★<span class="sr-only">4 star of 5</span></label>
+      <input class="input" on="input-debounced:ic-form.submit" type="radio" name="rating" value="5" id="rating-5"><label for="rating-5">★<span class="sr-only">5 star of 5</span></label>
+    </div>
 
     <label class="element title"><strong>Title:</strong>
       <input type="text" name="title" on="input-debounced:ic-form.submit">
@@ -153,7 +175,7 @@
       <textarea name="review" on="input-debounced:ic-form.submit"></textarea>
     </label>
 
-    <span class="submit faux">SUBMIT YOUR REVIEW</span>
+    <button class="submit faux" disabled>SUBMIT YOUR REVIEW</button>
 
     <div submit-success>
       <template type="amp-mustache">
@@ -172,11 +194,11 @@
   <p><span style="font-weight:bold;">%%Member_Busname%%</span><br><br>%%Member_Addr%%<br>%%Member_City%%, %%Member_State%%, %%Member_PostalCode%%, %%Member_Country%%<br></p>
 
   <div class="social">
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" width="1.8em" height="1.8em"></amp-img>
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" width="1.8em" height="1.8em"></amp-img>
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" width="1.8em" height="1.8em"></amp-img>
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" width="1.8em" height="1.8em"></amp-img>
-    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-facebook.png" alt="facebook" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-instagram.png" alt="instagram" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-twitter.png" alt="twitter" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-pinterest.png" alt="pinterest" width="1.8em" height="1.8em"></amp-img>
+    <amp-img src="https://rd-industry-emails.s3-us-west-2.amazonaws.com/retail/nto/brand-assets/email-templates/branding-nto-social-app.png" alt="NTO app" width="1.8em" height="1.8em"></amp-img>
   </div>
 
   <div class="footer-nav">
