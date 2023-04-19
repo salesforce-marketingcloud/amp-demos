@@ -21,6 +21,6 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "tailwindcss": "^2.0.3",
-    "val-loader": "^2.1.2"
+    "val-loader": "^5.0.1"
   }
 }
