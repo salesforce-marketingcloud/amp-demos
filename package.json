@@ -4,6 +4,9 @@
   "private": true,
   "author": "salesforce.com",
   "license": "CC0-1.0",
+  "engines": {
+    "node": "16.13.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
