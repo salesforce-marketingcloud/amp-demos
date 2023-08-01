@@ -20,7 +20,7 @@
     "postcss": "^8.2.8",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "tailwindcss": "^2.0.3",
+    "tailwindcss": "^3.3.3",
     "val-loader": "^2.1.2"
   }
 }
